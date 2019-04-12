@@ -5,12 +5,8 @@ import HeaderItems from './HeaderItems/HeaderItems'
 import Logo from '../../../assets/vector/suitcase3.svg'
 
 const Header = (props) => {
-
-    const links = [
-        'Главная',
-        'Товары',
-        'О нас'
-    ]
+    
+    const { links } = props
 
     return (
         <header className={classes.PageHeader}>

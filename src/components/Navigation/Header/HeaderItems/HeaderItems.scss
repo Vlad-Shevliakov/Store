@@ -1,14 +1,35 @@
-.HeaderItems {
+$main-color: #b8cd07;
 
+.HeaderItems {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
 }
 
 .HeaderItems__list {
-    // width: 600px;
     margin: 0;
     padding: 0;
     list-style: none;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-left: auto;
+    flex-wrap: wrap;
+}
+
+.UserInteraction {
+    i {
+        cursor: pointer;
+        padding: 0 30px;
+        &:hover {
+            color: $main-color;
+        }
+    }
+    .UserInteraction__auth {
+        display: inline;
+        i {
+            padding: 10px;
+        }
+        span {
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+    }
 }

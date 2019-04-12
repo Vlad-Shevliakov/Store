@@ -1,9 +1,18 @@
-.Item {
-    a {
-        display: block;
-        padding: 10px 15px;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-weight: 700;
-    }
+$navigationLinkColor: #161616;
+$navigationLinkColor--active: #b8cd07;
+
+.Link {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $navigationLinkColor;
+}
+
+// главная навигация
+.ActivePage {
+    background-color: $navigationLinkColor--active;
+    border-radius: 20px;
+    color: #fff;
 }

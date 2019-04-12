@@ -1,6 +1,8 @@
+$header-fontsize: 14px;
+
 .PageHeader {
-    background-color: orange;
     padding: 10px 80px;
+    font-size: $header-fontsize;
 }
 
 .MainNavigation {
