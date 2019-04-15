@@ -1,0 +1,26 @@
+$desktop-size: 1200px;
+$tablet-size: 768px;
+
+
+
+.BurgerMenuBtn {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 24px;
+    color: #161616;
+    margin: 10px;
+}
+
+
+
+
+@media (min-width: $tablet-size) {
+
+}
+
+@media (min-width: $desktop-size) {
+    .BurgerMenuBtn {
+        display: none;
+    }
+}

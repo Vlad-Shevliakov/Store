@@ -21,10 +21,13 @@ const HeaderItems = (props) => {
                 }) }
             </ul>
             <div className={classes.UserInteraction}>
-                <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+                <div className={classes.UserInteraction__shop }>
+                    <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+                    <span className={classes.SubText} >Товары</span>
+                </div>
                 <div className={classes.UserInteraction__auth}>
                     <i className="fa fa-user" aria-hidden="true"></i>
-                    <span>Личный кабинет</span>
+                    <span className={classes.SubText} >Личный кабинет</span>
                 </div>
             </div>
         </div>

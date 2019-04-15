@@ -3,6 +3,7 @@ import classes from './Header.scss'
 
 import HeaderItems from './HeaderItems/HeaderItems'
 import Logo from '../../../assets/vector/suitcase3.svg'
+import Button from '../../UI/Button/Button'
 
 const Header = (props) => {
     
@@ -14,6 +15,11 @@ const Header = (props) => {
                 <div className={classes.LogoBox}>
                     <img src={Logo} alt="Логотип"/>
                 </div>
+                <Button
+                    classType='BurgerMenuBtn'
+                >
+                    <i className="fas fa-bars"></i>
+                </Button>
                 <HeaderItems
                     navigationItems={links} 
                 />

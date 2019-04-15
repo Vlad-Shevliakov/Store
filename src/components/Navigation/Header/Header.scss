@@ -1,8 +1,15 @@
 $header-fontsize: 14px;
+$headerColor: #32CD32;
+$headerColor_desktop: #fff;
+
+$desktop-size: 1200px;
+$tablet-size: 768px;
+
 
 .PageHeader {
-    padding: 10px 80px;
+    padding: 10px 20px;
     font-size: $header-fontsize;
+    background-color: $headerColor;
 }
 
 .MainNavigation {
@@ -10,5 +17,23 @@ $header-fontsize: 14px;
 }
 
 .LogoBox {
-    width: 60px;
+    display: none;
+}
+
+@media (min-width: $tablet-size) {
+    .PageHeader {
+        padding: 10px 60px 10px 20px;
+        background-color: $headerColor;
+    }
+}
+
+@media (min-width: $desktop-size) {
+    .PageHeader {
+        padding: 10px 80px;
+        background-color: $headerColor_desktop;
+    }
+    .LogoBox {
+        display: block;
+        width: 60px;
+    }
 }
