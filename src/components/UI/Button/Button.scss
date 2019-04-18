@@ -4,19 +4,38 @@ $tablet-size: 768px;
 
 
 .BurgerMenuBtn {
+    cursor: pointer;
+    box-sizing: border-box;
     background: none;
     border: none;
     outline: none;
-    font-size: 24px;
-    color: #161616;
-    margin: 10px;
+    font-size: 26px;
+    color: #143458;
+    margin-right: 5px;
+    vertical-align: middle;
 }
 
-
-
+.NavSearch_Button {
+    cursor: pointer;
+    font: inherit;
+    outline: none;
+    border: none;
+    background: none;
+    background: #143458;
+    height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    color: #fff;
+    text-rendering: auto;
+    transition: background-color .3s ease;
+    border-radius: 0 4px 4px 0;
+    &:hover {
+        background-color: #1a4270;
+    }
+}
 
 @media (min-width: $tablet-size) {
-
+    
 }
 
 @media (min-width: $desktop-size) {

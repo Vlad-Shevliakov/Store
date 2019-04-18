@@ -1,8 +1,5 @@
-$header-fontsize: 14px;
-
 $main-color: #b8cd07;
 $main-black: #161616;
-$tablet_mob-color: #112438;
 
 
 $desktop-size: 1200px;
@@ -23,9 +20,10 @@ $tablet-size: 768px;
 
 
 .HeaderItems {
-    margin-left: auto;
     display: flex;
     align-items: center;
+    width: 100%;
+    margin: 0;
 }
 
 .HeaderItems__list {
@@ -33,147 +31,30 @@ $tablet-size: 768px;
 }
 
 
-.UserInteraction {
-    color: $tablet_mob-color;
-}
-
-.UserInteraction__shop {
-    display: inline-block;
-    i {
-        display: block;
-        font-size: 24px;
-        padding: 0 10px;
-        padding-right: 15px;
-    }
-    .SubText {
-        display: none;
-    }
-}
-
-.UserInteraction__auth {
-    display: inline-block;
-    i {
-        display: block;
-        font-size: 24px;
-        padding: 0 10px;
-    }
-    .SubText {
-        display: none;
-    }
-}
-
-
-
-
-
-
-
-
-
 @media (min-width: $tablet-size) {
-    .HeaderItems__list {
-        display: none;
-    }
-    .UserInteraction {
-        display: block;
-    }
-
-    .UserInteraction__shop {
-        display: inline-block;
-        margin: 0 10px 0 20px;
-        i {
-            display: inline;
-            padding: 10px;
-            font-size: 16px;
-        }
-        .SubText {
-            display: inline;
-            font-size: 16px;
-            font-weight: 700;
-        }
-        
-    }
-
-    .UserInteraction__auth {
-        display: inline-block;
-        box-sizing: border-box;
-        i {
-            display: inline;
-            padding: 10px;
-            font-size: 16px;
-        }
-        .SubText {
-            display: inline;
-            font-size: 16px;
-            font-weight: 700;
-            border-bottom: 2px dashed $main-black;
-            padding-bottom: 3px;
-        }
+    .HeaderItems {
+        width: auto;
+        margin-left: auto;
+        display: flex;
+        align-items: center;
     }
 }
-
-
-
-
-
 
 
 
 @media (min-width: $desktop-size) {
-    .UserInteraction {
-        color: $main-black;
+
+    .HeaderItems {
+        width: auto; //////////////
     }
-
-
+    
+    
     .HeaderItems__list {
         display: flex;
         margin: 0;
+        margin-right: 20px;
         padding: 0;
         list-style: none;
-        flex-wrap: wrap;
-    }
-
-    .UserInteraction__shop {
-        display: inline-block;
-        i {
-            font-size: $header-fontsize; 
-            transition: all 120ms ease-in;
-        }
-        .SubText {
-            text-transform: uppercase;
-            font-size: $header-fontsize; 
-            transition: all 120ms ease-in;
-        }
-        &:hover {
-            & i,
-            & .SubText {
-                cursor: pointer;
-                color: $main-color;
-            }
-        } 
-    }
-
-    .UserInteraction__auth {
-        display: inline-block;
-        i {
-            font-size: $header-fontsize; 
-            transition: all 120ms ease-in
-        }
-        .SubText {
-            text-transform: uppercase;
-            font-size: $header-fontsize; 
-            transition: all 150ms ease-in
-        }
-        &:hover {
-            & i {
-                cursor: pointer;
-                color: $main-color;
-            }
-            & .SubText {
-                cursor: pointer;
-                color: $main-color;
-                border-bottom: none
-            }
-        } 
+        flex-wrap: nowrap;
     }
 }

@@ -21,7 +21,7 @@ const Layout = props => {
             {/* /////////// */}
             <footer style={
                 {   width: '100%',
-                    height: '400px',
+                    height: '1300px',
                     backgroundColor: 'gold'
                 }}
             />

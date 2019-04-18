@@ -1,0 +1,30 @@
+$desktop-size: 1200px;
+$tablet-size: 768px;
+
+
+.NavSearch_Input {
+    box-sizing: border-box;
+    border: none;
+    font: inherit;
+    outline: none;
+    height: 40px;
+    width: 100%;
+    line-height: normal; // для Safari
+    padding: 0 0 0 14px;
+    background-color: #fff;
+    color: #161616;
+    vertical-align: middle;
+    border-radius: 4px;
+}
+
+
+
+@media (min-width: $tablet-size) {
+    .NavSearch_Input {
+        border-radius: 4px 0 0 4px;
+    }
+}
+
+@media (min-width: $desktop-size) {
+
+}
