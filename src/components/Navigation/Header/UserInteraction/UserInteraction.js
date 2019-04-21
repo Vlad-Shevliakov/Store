@@ -8,6 +8,7 @@ const UserInteraction = (props) => {
 
     const searchHandler = (event) => {
         event.preventDefault()
+        console.log('BTN')
     }
 
     return (
@@ -25,8 +26,10 @@ const UserInteraction = (props) => {
                         <Button
                             func={searchHandler} 
                             classType='NavSearch_Button'
+                            type='submit'
                         >
-                            Поиск
+                            <span>Поиск</span>
+                            <i className="fa fa-search" aria-hidden="true"></i>
                         </Button>
                     </div>
                 </form>

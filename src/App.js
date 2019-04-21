@@ -23,7 +23,7 @@ const About = () => (
     <h1 style={{
         position: 'absolute',
         top: '70px',
-        left: '20px'
+        left: '50%'
     }}>О нас</h1>
 )
 

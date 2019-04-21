@@ -1,6 +1,11 @@
 $desktop-size: 1200px;
 $tablet-size: 768px;
+$small-size: 224px;
 
+$main-color: #b8cd07;
+
+// Drawer
+$drawer-btn-color: #0d2744;
 
 
 .BurgerMenuBtn {
@@ -16,30 +21,92 @@ $tablet-size: 768px;
 }
 
 .NavSearch_Button {
+    display: block;
     cursor: pointer;
-    font: inherit;
+    outline: none;
+    border: none;
+    height: 40px;
+    border-radius: 0 4px 4px 0;
+    background-color: #fff;
+    color: #143458;
+    padding-right: 9px;
+    span {
+        display: none;
+    }
+}
+
+
+
+.ButtonHideDrawer {
+    cursor: pointer;
     outline: none;
     border: none;
     background: none;
-    background: #143458;
-    height: 40px;
-    text-align: center;
-    vertical-align: middle;
-    color: #fff;
-    text-rendering: auto;
-    transition: background-color .3s ease;
-    border-radius: 0 4px 4px 0;
-    &:hover {
-        background-color: #1a4270;
+    font-size: 30px;
+    color: $drawer-btn-color;
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: $small-size) {
+
+    .NavSearch_Button {
+        display: none;
+    }
+}
+
+@media (min-width: $tablet-size) {
+
+    .NavSearch_Button--mobile {
+        display: none;
+    }
+    
+    .NavSearch_Button {
+        display: block;
+        cursor: pointer;
+        font: inherit;
+        outline: none;
+        border: none;
+        background: none;
+        background: #143458;
+        height: 40px;
+        text-align: center;
+        color: #fff;
+        text-rendering: auto;
+        transition: background-color .4s ease;
+        border-radius: 0 4px 4px 0;
+        i {
+            display: none;
+        }
+        span {
+            display: inline;
+        }
+        &:hover {
+            background-color: $main-color;
+        }
     }
 }
 
 @media (min-width: $tablet-size) {
     
+    .NavSearch_Button:hover {
+        background-color: #0d2744;
+    }
 }
 
 @media (min-width: $desktop-size) {
+
     .BurgerMenuBtn {
         display: none;
+    }
+
+    .NavSearch_Button:hover {
+        background-color: $main-color;
     }
 }

@@ -8,6 +8,7 @@ $tablet-size: 768px;
 
 
 .PageHeader {
+    z-index: 998;
     padding: 14px 10px;
     font-size: $tablet-fontsize;
     background-color: $headerColor;

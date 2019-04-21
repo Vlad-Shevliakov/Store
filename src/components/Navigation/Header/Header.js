@@ -7,7 +7,7 @@ import Button from '../../UI/Button/Button'
 
 const Header = (props) => {
     
-    const { links } = props
+    const { links, switchFunc } = props
 
     return (
         <header className={classes.PageHeader}>
@@ -17,6 +17,7 @@ const Header = (props) => {
                 </div>
                 <Button
                     classType='BurgerMenuBtn'
+                    func={switchFunc}
                 >
                     <i className="fas fa-bars"></i>
                 </Button>

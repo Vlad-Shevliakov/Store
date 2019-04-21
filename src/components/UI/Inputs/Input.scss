@@ -1,6 +1,6 @@
 $desktop-size: 1200px;
 $tablet-size: 768px;
-
+$small-size: 230px;
 
 .NavSearch_Input {
     box-sizing: border-box;
@@ -14,15 +14,13 @@ $tablet-size: 768px;
     background-color: #fff;
     color: #161616;
     vertical-align: middle;
-    border-radius: 4px;
+    border-radius: 4px 0 0 4px;
 }
 
 
 
 @media (min-width: $tablet-size) {
-    .NavSearch_Input {
-        border-radius: 4px 0 0 4px;
-    }
+    
 }
 
 @media (min-width: $desktop-size) {
