@@ -2,7 +2,7 @@ import React from 'react'
 import classes from './Header.scss'
 
 import HeaderItems from './HeaderItems/HeaderItems'
-import Logo from '../../../assets/vector/suitcase3.svg'
+import Logo from '../../../assets/vector/logo.svg'
 import Button from '../../UI/Button/Button'
 
 const Header = (props) => {

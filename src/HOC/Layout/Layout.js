@@ -11,7 +11,7 @@ const Layout = props => {
         { text: 'Товары', to: '/products', exact: false },
         { text: 'О нас', to: '/about', exact: false },
     ]
-    console.log(props)
+
     return (
         <div>
             <Drawer
@@ -29,8 +29,8 @@ const Layout = props => {
             {/* /////////// */}
             <footer style={
                 {   width: '100%',
-                    height: '1300px',
-                    backgroundColor: '#fff'
+                    height: '3000px',
+                    backgroundColor: '#ffcc00'
                 }}
             />
         </div>

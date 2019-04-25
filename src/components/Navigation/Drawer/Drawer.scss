@@ -1,32 +1,23 @@
 $main-text-color: #0d2744;
+$headerColor: #2ECC40;
 
+$desktop-size: 1200px;
+$tablet-size: 768px;
 
-.DrawerWrapper.hide {
-    display: none;
-}
+@mixin hide {
+    position: absolute;
 
-.DrawerWrapper.show {
-    display: block;
-}
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
 
-.Drawer {
-    position: fixed;
-    z-index: 1000;
-    width: 40%;
-    background-color: #fff;
-    height: 100vh;
-    color: $main-text-color;
-}
+    white-space: nowrap;
 
-.Drawer__top {
-    position: relative;
-    button {
-        position: absolute;
-        margin: 0;
-        padding: 0;
-        top: 12px;
-        right: 20px;
-    }
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
 
 .DrawerOverlay {
@@ -34,4 +25,83 @@ $main-text-color: #0d2744;
     background-color: rgba(0, 0, 0, 0.5);
     top: 0; right: 0; bottom: 0; left: 0;
     z-index: 999;
+}
+
+.Drawer {
+    position: fixed;
+    z-index: 1000;
+    width: 75%;
+    max-width: 340px;
+    background-color: #fff;
+    height: 100vh;
+    color: $main-text-color;
+    transition: transform 300ms;
+}
+
+.DrawerWrapper.hide {
+    transform: translateX(-100%);
+}
+
+.DrawerWrapper.show {
+
+}
+
+.Drawer__top {
+    position: relative;
+    background-color: $headerColor;
+    background-color: #fff;
+    padding: 20px 15px; 
+    border-bottom: 1px solid #dedede;
+    button {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        top: 10px;
+        right: 20px;
+    }
+}
+
+.DrawerLogo {
+    display: block;
+    max-width: 162px;
+}
+
+
+.DrawerAuthLink {
+    text-decoration: none;
+    color: $main-text-color;
+    &:active {
+        color: #6b6969;
+    }
+    i {
+        font-size: 20px;
+    }
+    span {
+        padding-left: 10px;
+    }
+}
+
+
+
+
+
+
+.DrawerWrapper {
+
+}
+
+@media (max-width: 267px) {
+    .Drawer {
+        width: 100%;
+    }
+}
+
+@media (min-width: $tablet-size) {
+   
+}
+
+@media (min-width: $desktop-size) {
+    .DrawerWrapper {
+        display: none;
+    }
 }

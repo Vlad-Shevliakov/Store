@@ -35,12 +35,13 @@ $tablet-size: 768px;
 
 @media (min-width: $desktop-size) {
     .PageHeader {
+        position: static;
         padding: 10px 80px;
         background-color: $headerColor_desktop;
         font-size: $header-fontsize;
     }
     .LogoBox {
         display: block;
-        width: 60px;
+        width: 160px;
     }
 }

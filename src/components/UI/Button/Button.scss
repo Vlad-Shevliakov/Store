@@ -33,6 +33,9 @@ $drawer-btn-color: #0d2744;
     span {
         display: none;
     }
+    &:active {
+        color: #b8cd07;
+    }
 }
 
 
@@ -44,6 +47,9 @@ $drawer-btn-color: #0d2744;
     background: none;
     font-size: 30px;
     color: $drawer-btn-color;
+    &:active {
+        color: #b8cd07;
+    }
 }
 
 
@@ -106,7 +112,12 @@ $drawer-btn-color: #0d2744;
         display: none;
     }
 
-    .NavSearch_Button:hover {
-        background-color: $main-color;
+    .NavSearch_Button {
+        &:hover {
+            background-color: $main-color;
+        }
+        &:active {
+            color: #fff;
+        }
     }
 }
