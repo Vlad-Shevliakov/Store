@@ -1,0 +1,56 @@
+$price-color: #2ECC40;
+
+
+$desktop-size: 1200px;
+$tablet-size: 768px;
+
+
+
+.ProductUnit {
+    width: 100%;
+}
+
+.product_preview {
+
+}
+
+.image {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    height: auto;
+}
+
+.product_info {
+    text-align: center;
+    padding: 0 35px 35px 35px;
+    .title {
+        font-size: 15px;
+        font-weight: 500;
+        color: #161616;
+    }
+}
+
+
+.product_price {
+    margin-top: 13px;
+    .price {
+        font-size: 18px;
+        color: $price-color;
+        font-weight: 700;
+    }
+    .currency {
+        margin-left: 4px;
+        vertical-align: top;
+    }
+}
+
+
+@media (min-width: $tablet-size) {
+
+}
+
+@media (min-width: $desktop-size) {
+
+}

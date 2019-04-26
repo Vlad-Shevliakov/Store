@@ -1,0 +1,26 @@
+
+$desktop-size: 1200px;
+$tablet-size: 768px;
+
+
+.Layout {
+    main {
+        padding: 65px 0 0 0;
+    }
+}
+
+@media (max-width: 267px) {
+    
+}
+
+@media (min-width: $tablet-size) {
+   
+}
+
+@media (min-width: $desktop-size) {
+    .Layout {
+        main {
+            padding: 0;
+        }
+    }
+}

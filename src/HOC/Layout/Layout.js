@@ -1,7 +1,8 @@
 import React from 'react'
-import Header from '../../components/Navigation/Header/Header'
+import classes from './Layout.scss'
 import { connect } from 'react-redux'
 import Drawer from '../../components/Navigation/Drawer/Drawer'
+import Header from '../../components/Navigation/Header/Header'
 import * as Head from '../../redux/actions/headAction'
 
 const Layout = props => {
@@ -13,7 +14,7 @@ const Layout = props => {
     ]
 
     return (
-        <div>
+        <div className={classes.Layout}>
             <Drawer
                 show={props.showDrawer}
                 switchFunc={props.switchDrawer} 
@@ -26,13 +27,6 @@ const Layout = props => {
             <main>
                 { props.children }
             </main>
-            {/* /////////// */}
-            <footer style={
-                {   width: '100%',
-                    height: '3000px',
-                    backgroundColor: '#ffcc00'
-                }}
-            />
         </div>
     )
 }

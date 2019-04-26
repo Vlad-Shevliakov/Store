@@ -3,20 +3,14 @@ import './normalize.scss'
 import { Switch, Route } from 'react-router-dom'
 import Layout from './HOC/Layout/Layout'
 
+import Home from './pages/Home/Home'
 
 // тест
-const Home = () => (
-    <h1 style={{
-        position: 'absolute',
-        top: '70px',
-        left: '20px'
-    }}>Главная</h1>
-)
 const Products = () => (
     <h1 style={{
         position: 'absolute',
         top: '70px',
-        left: '20px'
+        left: '50%'
     }}>Товары</h1>
 )
 const About = () => (

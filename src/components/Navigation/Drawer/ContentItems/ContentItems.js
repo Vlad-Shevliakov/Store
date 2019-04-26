@@ -2,7 +2,7 @@ import React from 'react'
 import classes from './ContentItems.scss'
 import { Link } from 'react-router-dom'
 
-const ContentItems = (props) => {
+const ContentItems = props => {
 
     const items = [
         {

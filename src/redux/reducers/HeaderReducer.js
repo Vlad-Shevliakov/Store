@@ -1,7 +1,7 @@
 import * as AT from '../actionType'
 
 const initialState = {
-    showDrawer: true
+    showDrawer: false
 }
 
 export default (state = initialState, action) => {
