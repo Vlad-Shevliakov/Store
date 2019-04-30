@@ -1,23 +1,24 @@
 $price-color: #2ECC40;
 
-
 $desktop-size: 1200px;
 $tablet-size: 768px;
 
 
-
 .ProductUnit {
-    width: 100%;
-}
+    box-sizing: border-box;
+    flex-grow: 1;
+    flex-basis: 50%;
+    border-right: 1px solid #efefef;
+} 
 
-.product_preview {
+// .product_preview {
 
-}
+// }
 
 .image {
-    display: block;
-    width: 100%;
-    max-width: 400px;
+    display: block; /////////////////
+    max-width: 100%;
+    // max-width: 400px;
     margin: 0 auto;
     height: auto;
 }
@@ -48,9 +49,26 @@ $tablet-size: 768px;
 
 
 @media (min-width: $tablet-size) {
+    
+    .ProductUnit {
+        flex-basis: 25%;
+        position: relative;
+        margin-bottom: 30px;
+    }
 
+    .product_preview {
+
+    }
 }
 
 @media (min-width: $desktop-size) {
+    
+    .ProductUnit {
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            z-index: 10;
+            box-shadow: 0px 5px 19px 1px rgba(36, 11, 12, 0.15);
+        }
+    }
 
 }

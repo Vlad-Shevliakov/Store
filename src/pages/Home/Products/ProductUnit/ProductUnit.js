@@ -2,7 +2,6 @@ import React from 'react'
 import classes from './ProductUnit.scss'
 
 import { Link } from 'react-router-dom'
-import I from '../../../../assets/rastr/test-bag_3.jpg'
 
 const ProductUnit = props => {
 
@@ -12,7 +11,7 @@ const ProductUnit = props => {
         <li className={classes.ProductUnit}>
             <div className={classes.product_preview}>
                 <Link to='#'>
-                    <img className={classes.image} src={I} alt='test'/>
+                    <img className={classes.image} src={image} alt='product info'/>
                 </Link>
             </div>
             <div className={classes.product_info}>

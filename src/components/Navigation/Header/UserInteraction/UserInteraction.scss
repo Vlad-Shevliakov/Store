@@ -67,27 +67,13 @@ $tablet-size: 768px;
     }
 }
 
+// Media rules
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media (max-width: 210px) {
+    .UserInteraction__auth {
+        display: none;
+    }
+}
 
 @media (min-width: $tablet-size) {
 
