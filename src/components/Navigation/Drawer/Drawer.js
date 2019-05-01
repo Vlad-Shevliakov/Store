@@ -7,19 +7,21 @@ import ContentItems from './ContentItems/ContentItems'
 
 
 const Drawer = (props) => {
-
-    const attachedClasses = [classes.DrawerWrapper]
+    const body = document.querySelector('BODY')
+    const DrawerClasses = [classes.Drawer]
+    const OverlayClasses = [classes.Overlay]
 
     if (props.show) {
-        attachedClasses.push(classes.show)
-    } else {
-        attachedClasses.push(classes.hide)
+        body.style.overflow = 'hidden'
+        DrawerClasses.push(classes.show)
+        OverlayClasses.push(classes.show)
     }
+    if (!props.show) body.style.overflow = 'auto'
 
 
     return (
-        <div className={attachedClasses.join(' ')}>
-            <aside className={classes.Drawer}>
+        <div>
+            <aside className={DrawerClasses.join(' ')}>
                 <div className={classes.Drawer__top}>
                     <img 
                         src={Logo}
@@ -34,12 +36,14 @@ const Drawer = (props) => {
                     </Button>
                 </div>
                 <div className={classes.Drawer__middle}>
-                    <ContentItems />
+                    <ContentItems
+                        hideAfterClick={props.switchFunc}
+                    />
                 </div>
             </aside>
             <div
                 onClick={props.switchFunc}
-                className={classes.DrawerOverlay}
+                className={OverlayClasses.join(' ')}
             />
         </div>
     )

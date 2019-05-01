@@ -3,6 +3,7 @@ import classes from './Layout.scss'
 import { connect } from 'react-redux'
 import Drawer from '../../components/Navigation/Drawer/Drawer'
 import Header from '../../components/Navigation/Header/Header'
+import Footer from '../../components/Footer/Footer'
 import * as Head from '../../redux/actions/headAction'
 
 const Layout = props => {
@@ -18,7 +19,6 @@ const Layout = props => {
             <Drawer
                 show={props.showDrawer}
                 switchFunc={props.switchDrawer} 
-                links={links} 
             />
             <Header
                 links={links}
@@ -27,6 +27,7 @@ const Layout = props => {
             <main>
                 { props.children }
             </main>
+            <Footer />
         </div>
     )
 }

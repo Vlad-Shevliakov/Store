@@ -8,14 +8,12 @@ import Home from './pages/Home/Home'
 // тест
 const Products = () => (
     <h1 style={{
-        position: 'absolute',
         top: '70px',
         left: '50%'
     }}>Товары</h1>
 )
 const About = () => (
     <h1 style={{
-        position: 'absolute',
         top: '70px',
         left: '50%'
     }}>О нас</h1>

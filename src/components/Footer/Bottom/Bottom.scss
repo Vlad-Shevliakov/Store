@@ -1,0 +1,29 @@
+$desktop-size: 1200px;
+$tablet-size: 768px;
+
+
+.Bottom {
+    color: rgba(255, 255, 255, .5);
+    padding: 30px 0;
+}
+
+
+.copyright {
+    margin: 0;
+    font-size: 15px;
+    text-align: center;
+}
+
+
+@media (max-width: 267px) {
+    
+}
+
+@media (min-width: $tablet-size) {
+   
+}
+
+@media (min-width: $desktop-size) {
+    
+}
+

@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 
 const ContentItems = props => {
 
+    const { hideAfterClick } = props
+
     const items = [
         {
             text: 'Главная',
@@ -32,7 +34,7 @@ const ContentItems = props => {
                 items.map((item, ind) => {
                     return (
                         <li className={classes.Content__item} key={ind}>
-                            <Link to={item.to}>
+                            <Link onClick={hideAfterClick} to={item.to}>
                                 <i className={item.facls} aria-hidden={item.aria} />
                                 {/* <span>{item.text}</span> */}
                                 { item.text }
