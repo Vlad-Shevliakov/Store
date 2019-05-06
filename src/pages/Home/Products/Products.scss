@@ -4,7 +4,6 @@ $tablet-size: 768px;
 
 
 .ProductsSection {
-    // max-width: 1369px;
     max-width: 1300px;
     margin: 0 auto;
 }
@@ -18,18 +17,17 @@ $tablet-size: 768px;
 }
 
 
+
 @media (min-width: $tablet-size) {
+
+
+    .Products_list li:nth-child(4n+4) {
+        border: transparent; 
+    }
 
     .Products_list {
 
     }
 }
 
-@media (min-width: $desktop-size) {
-
-    
-    
-    .Products_list li:nth-child(4n+4) {
-        border: transparent; 
-    }
-}
+@media (min-width: $desktop-size) {}

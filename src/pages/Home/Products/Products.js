@@ -36,7 +36,7 @@ const Products = props => {
         },
         {
             image: p2,
-            title: 'Cotton Purple Underwear',
+            title: 'Cotton Green Underwear Black Out Edition',
             price: 1700
         },
         {
@@ -45,9 +45,9 @@ const Products = props => {
             price: 2000
         },
         {
-            image: p2,
-            title: 'Cotton Purple Underwear',
-            price: 1700
+            image: p1,
+            title: 'Cotton Green Underwear Black Out Edition',
+            price: 2000
         }
     ]
 

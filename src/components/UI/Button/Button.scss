@@ -53,8 +53,30 @@ $drawer-btn-color: #0d2744;
 }
 
 
+.ProductButton_cart {
+    cursor: pointer;
+    width: 100%;
+    // background-color: #7cc576; // на hover
+    outline: none;
+    border: none;
+    background: none;
+    i {
+        color: #fff;
+        color: #2ECC40;
+    }
+}
 
-
+.ProductButton_like {
+    position: absolute;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 10px;
+    padding-top: 1px;
+    right: 15px;
+    top: 15px;
+    color: #f63440;
+}
 
 
 

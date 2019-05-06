@@ -28,3 +28,16 @@ $icon-color: #7cc576;
         }
     }
 }
+
+
+@media (max-width: 267px) {
+
+    .Content__item {
+        padding-left: 5px;
+        a {
+            i {
+                padding-right: 10px;
+            }
+        }
+    }
+}

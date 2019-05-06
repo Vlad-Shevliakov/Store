@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import classes from './ProductUnit.scss'
+import Button from '../../../../components/UI/Button/Button'
 
 import { Link } from 'react-router-dom'
 
 const ProductUnit = props => {
+
+    const [liked, changeLike] = useState(false)
+
+    const likeHandler = () => {
+        changeLike(!liked)
+    }
 
     const { image, price, title } = props
 
@@ -15,12 +22,31 @@ const ProductUnit = props => {
                 </Link>
             </div>
             <div className={classes.product_info}>
-                <span className={classes.title}>{title}</span>
-                <div className={classes.product_price}>
-                    <span className={classes.price}>{price}</span>
-                    <span className={classes.currency}>грн</span>
-                </div>
+                <p className={classes.title}>{title}</p>
             </div>
+            <div className={classes.product_price}>
+                <strong className={classes.price}>{price}</strong>
+                <span className={classes.currency}>грн</span>
+            </div>
+            <div className={classes.button_wrapper}>
+                <Button
+                        classType='ProductButton_cart'
+                    >
+                        <i className="fa fa-shopping-cart" aria-hidden="true" /> +1                    
+                </Button>
+                
+            </div>
+            <Button
+                    classType='ProductButton_like'
+                    func={likeHandler}
+                >
+                    {
+                        !liked ? 
+                            <i className="far fa-heart" /> 
+                            : 
+                            <i className="fa fa-heart" aria-hidden="true"></i>
+                    }
+            </Button>
         </li>
     )
 }
