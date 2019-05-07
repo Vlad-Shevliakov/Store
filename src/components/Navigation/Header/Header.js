@@ -19,9 +19,7 @@ const Header = (props) => {
                 <Button
                     classType='BurgerMenuBtn'
                     func={switchFunc}
-                >
-                    <i className="fas fa-bars"></i>
-                </Button>
+                />
                 <HeaderItems
                     navigationItems={links} 
                 />

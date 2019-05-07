@@ -34,7 +34,7 @@ $tablet-size: 768px;
         text-align: center;
         color: #161616;
         font: inherit;
-        font-weight: 700; //////
+        font-weight: 500; //////
     }
     .description {
         text-align: center;
@@ -72,11 +72,5 @@ $tablet-size: 768px;
         width: 100%;
         max-width: 1200px;
         margin: 0 auto;
-    }
-
-    .text_wrap {
-        .heading {
-            font-weight: 400;
-        }
     }
 }

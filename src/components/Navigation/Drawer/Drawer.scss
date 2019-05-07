@@ -4,6 +4,19 @@ $headerColor: #2ECC40;
 $desktop-size: 1200px;
 $tablet-size: 768px;
 
+@mixin hide {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
 .Drawer {
     left: -75%;
     position: fixed;
@@ -42,8 +55,8 @@ $tablet-size: 768px;
         position: absolute;
         margin: 0;
         padding: 0;
-        top: 10px;
-        right: 20px;
+        top: 15px;
+        right: 22px;
     }
 }
 
@@ -68,12 +81,13 @@ $tablet-size: 768px;
 }
 
 
-// @media (max-width: 267px) {
+@media (max-width: 260px) {
 
-//     .Drawer {
-//         width: 100%;
-//     }
-// }
+    .Drawer {
+        width: 100%;
+        left: -100%;
+    }
+}
 
 @media (min-width: $tablet-size) {
    
@@ -81,7 +95,11 @@ $tablet-size: 768px;
 
 @media (min-width: $desktop-size) {
 
-    .DrawerWrapper {
+    .Drawer {
         display: none;
+    }
+
+    .Overlay {
+        @include hide();
     }
 }

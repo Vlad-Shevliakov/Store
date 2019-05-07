@@ -25,15 +25,13 @@ const Drawer = (props) => {
                 <div className={classes.Drawer__top}>
                     <img 
                         src={Logo}
-                        alt='Логотип'
+                        alt='логотип магазина'
                         className={classes.DrawerLogo}
                     />
                     <Button 
                         func={props.switchFunc}
                         classType='ButtonHideDrawer'
-                    >
-                        <i className="fa fa-times" aria-hidden="true"></i>
-                    </Button>
+                    />
                 </div>
                 <div className={classes.Drawer__middle}>
                     <ContentItems

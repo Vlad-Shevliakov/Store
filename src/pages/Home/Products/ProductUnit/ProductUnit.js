@@ -8,6 +8,14 @@ const ProductUnit = props => {
 
     const [liked, changeLike] = useState(false)
 
+    const shareFunc = () => {
+        console.log('[Share]')
+    }
+
+    const addToCartHandler = () => {
+        console.log('[Cart]')
+    }
+
     const likeHandler = () => {
         changeLike(!liked)
     }
@@ -30,10 +38,18 @@ const ProductUnit = props => {
             </div>
             <div className={classes.button_wrapper}>
                 <Button
+                        func={addToCartHandler}
                         classType='ProductButton_cart'
                     >
-                        <i className="fa fa-shopping-cart" aria-hidden="true" /> +1                    
+                        <i className="fas fa-cart-plus" aria-hidden="true" /> + 1                    
                 </Button>
+                <Link
+                    to={'#'}
+                    className={classes.share_link}
+                    onClick={shareFunc}
+                >
+                    <i className="fas fa-share" />
+                </Link>
                 
             </div>
             <Button
@@ -44,7 +60,7 @@ const ProductUnit = props => {
                         !liked ? 
                             <i className="far fa-heart" /> 
                             : 
-                            <i className="fa fa-heart" aria-hidden="true"></i>
+                            <i className="fas fa-heart" aria-hidden="true"></i>
                     }
             </Button>
         </li>

@@ -21,7 +21,11 @@ $tablet-size: 768px;
 @media (min-width: $tablet-size) {
 
 
-    .Products_list li:nth-child(4n+4) {
+    .Products_list li:nth-child(5n+5) {
+        border: transparent; 
+    }
+
+    .Products_list li:last-child {
         border: transparent; 
     }
 

@@ -10,14 +10,29 @@ $drawer-btn-color: #0d2744;
 
 .BurgerMenuBtn {
     cursor: pointer;
+    width: 26px;
     box-sizing: border-box;
     background: none;
+    background-image: url('../../../assets/ui-items/menu.svg');
+    background-repeat: no-repeat;
+    background-position: 0 50%;
     border: none;
     outline: none;
     font-size: 26px;
     color: #143458;
-    margin-right: 5px;
-    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.ButtonHideDrawer {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: none;
+    width: 18px;
+    height: 18px;
+    background-image: url('../../../assets/ui-items/close.svg');
+    background-repeat: no-repeat;
+    background-position: 0 50%;
 }
 
 .NavSearch_Button {
@@ -38,25 +53,10 @@ $drawer-btn-color: #0d2744;
     }
 }
 
-
-
-.ButtonHideDrawer {
-    cursor: pointer;
-    outline: none;
-    border: none;
-    background: none;
-    font-size: 30px;
-    color: $drawer-btn-color;
-    &:active {
-        color: #b8cd07;
-    }
-}
-
-
 .ProductButton_cart {
     cursor: pointer;
-    width: 100%;
-    // background-color: #7cc576; // на hover
+    flex-basis: 50%;
+    padding: 0;
     outline: none;
     border: none;
     background: none;
