@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import classes from './ProductUnit.scss'
 import Button from '../../../../components/UI/Button/Button'
 
+
 import { Link } from 'react-router-dom'
 
 const ProductUnit = props => {
@@ -20,17 +21,23 @@ const ProductUnit = props => {
         changeLike(!liked)
     }
 
+
     const { image, price, title } = props
 
     return (
         <li className={classes.ProductUnit}>
             <div className={classes.product_preview}>
-                <Link to='#'>
+                <Link to={'#'}>
                     <img className={classes.image} src={image} alt='product info'/>
                 </Link>
             </div>
             <div className={classes.product_info}>
-                <p className={classes.title}>{title}</p>
+                <Link
+                    to={'#'}
+                    className={classes.title}
+                >
+                    {title}
+                </Link>
             </div>
             <div className={classes.product_price}>
                 <strong className={classes.price}>{price}</strong>
@@ -41,16 +48,15 @@ const ProductUnit = props => {
                         func={addToCartHandler}
                         classType='ProductButton_cart'
                     >
-                        <i className="fas fa-cart-plus" aria-hidden="true" /> + 1                    
+                        <span className={classes._plusone}>В корзину</span>
                 </Button>
                 <Link
                     to={'#'}
                     className={classes.share_link}
                     onClick={shareFunc}
                 >
-                    <i className="fas fa-share" />
+                    <span>Детальнее</span>
                 </Link>
-                
             </div>
             <Button
                     classType='ProductButton_like'

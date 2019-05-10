@@ -1,10 +1,11 @@
 $price-color: #2ECC40;
 $border_color-m: #e1e1e1;
 $border_color-d: #eee;
-// $border_color-d: #eee;
+
 
 $desktop-size: 1200px;
 $tablet-size: 768px;
+$mobile-size: 320px;
 
 
 .ProductUnit {
@@ -32,10 +33,13 @@ $tablet-size: 768px;
     flex-grow: 1;
     padding-bottom: 5px;
     .title {
-        margin: 0;
+        text-decoration: none;
         font-size: 15px;
         font-weight: 400;
-        color: #221f11;
+        color: #343434;
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
 
@@ -62,18 +66,50 @@ $tablet-size: 768px;
     padding: 6px 0;
 }
 
+._plusone {
+    display: none;
+    color: #343434;
+}
+
+._incart {
+    display: none;
+}
+
 .share_link {
+    flex-basis: 50%;
+    text-decoration: none;
+    background-image: url('../../../../assets/ui-items/arrow-right.svg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 16px;
     color: $price-color;
     flex-basis: 50%;
     text-align: center;
     border-left: 1px solid $border_color-m;
+    transition: .4s;
+    span {
+        transition: .5s;
+        color: transparent;
+        text-decoration: underline;
+    }
+}
+
+
+
+
+
+@media (min-width: $mobile-size) {
+    
+    ._plusone {
+        display: inline;
+    }
 }
 
 
 @media (min-width: $tablet-size) {
     
     .ProductUnit {
-        flex-basis: 20%;
+        flex-basis: 25%;
         border-bottom: none;
         margin-bottom: 30px;
     }
@@ -86,6 +122,7 @@ $tablet-size: 768px;
 @media (min-width: $desktop-size) {
     
     .ProductUnit {
+        flex-basis: 20%;
         transition: all 0.3s ease-in-out;
         border-right: 1px solid $border_color-d;
         &:hover {
@@ -96,6 +133,23 @@ $tablet-size: 768px;
 
     .button_wrapper {
         border-top: 1px solid $border_color-d;
+        padding: 8px 0;
+    }
+
+    .share_link {
+        &:hover {
+            background-position: 130%;
+            span {
+                color: #343434;
+            }
+        }
+        &:active {
+            span {
+                transition: none;
+                color: #2ECC40;
+                text-decoration: underline;
+            }
+        }
     }
 
 }

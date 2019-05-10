@@ -60,9 +60,15 @@ $drawer-btn-color: #0d2744;
     outline: none;
     border: none;
     background: none;
-    i {
-        color: #fff;
-        color: #2ECC40;
+    background-image: url('../../../assets/ui-items/cart.svg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 16px;
+    transition: .3s;
+    span {
+        transition: .4s;
+        color: transparent;
+        text-decoration: underline;
     }
 }
 
@@ -140,6 +146,17 @@ $drawer-btn-color: #0d2744;
         }
         &:active {
             color: #fff;
+        }
+    }
+
+    .ProductButton_cart {
+        
+        &:hover {
+            background-position-x: -20%; // 0
+            span {
+                transition: none;
+                color: #343434;
+            }
         }
     }
 }
