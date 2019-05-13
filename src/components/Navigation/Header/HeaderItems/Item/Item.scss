@@ -1,6 +1,6 @@
-$navigationLinkColor: #161616;
+$navigationLinkColor: #343434;
 $navigationLinkColor--hover: #535353;
-$navigationLinkColor--active: #b8cd07;
+$navigationLinkColor--active: #7cc576;
 
 
 .Link {
@@ -8,7 +8,7 @@ $navigationLinkColor--active: #b8cd07;
     padding: 10px 15px;
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 500;
     color: $navigationLinkColor;
     &:hover {
         color: $navigationLinkColor--hover;
@@ -17,7 +17,6 @@ $navigationLinkColor--active: #b8cd07;
 
 // главная навигация
 .Link.ActivePage {
-    background-color: $navigationLinkColor--active;
+    color: $navigationLinkColor--active;
     border-radius: 20px;
-    color: #fff;
 }

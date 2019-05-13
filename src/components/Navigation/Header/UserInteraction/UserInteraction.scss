@@ -3,7 +3,8 @@ $icon-size: 14px;
 
 
 $main-color: #b8cd07;
-$main-black: #161616;
+$main-black: #343434;
+$hover-color: #7cc576;
 $tablet_mob-color: #143458;
 
 
@@ -101,7 +102,7 @@ $tablet-size: 768px;
         }
         .SubText {
             display: inline;
-            font-weight: 700;
+            font-weight: 500;
         }
         
     }
@@ -116,7 +117,7 @@ $tablet-size: 768px;
         }
         .SubText {
             display: inline;
-            font-weight: 700;
+            font-weight: 500;
             border-bottom: 2px dashed $main-black;
             padding-bottom: 3px;
         }
@@ -127,7 +128,6 @@ $tablet-size: 768px;
 
     .UserInteraction {
         color: $main-black;
-
     }
 
     .UserInteraction__search {
@@ -150,7 +150,7 @@ $tablet-size: 768px;
             & i,
             & .SubText {
                 cursor: pointer;
-                color: $main-color;
+                color: $hover-color;
             }
         } 
     }
@@ -168,11 +168,11 @@ $tablet-size: 768px;
         &:hover {
             & i {
                 cursor: pointer;
-                color: $main-color;
+                color: $hover-color;
             }
             & .SubText {
                 cursor: pointer;
-                color: $main-color;
+                color: $hover-color;
                 border-bottom: none
             }
         } 

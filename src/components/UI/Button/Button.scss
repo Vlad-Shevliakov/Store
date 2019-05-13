@@ -158,5 +158,10 @@ $drawer-btn-color: #0d2744;
                 color: #343434;
             }
         }
+        &:active {
+            span {
+                color: #7cc576;
+            }
+        }
     }
 }
