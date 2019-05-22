@@ -114,7 +114,7 @@ $drawer-btn-color: #0d2744;
         color: #fff;
         text-rendering: auto;
         transition: background-color .4s ease;
-        border-radius: 0 4px 4px 0;
+        border-radius: 0 3px 3px 0;
         i {
             display: none;
         }
@@ -141,8 +141,9 @@ $drawer-btn-color: #0d2744;
     }
 
     .NavSearch_Button {
+        background-color: #7cc576;
         &:hover {
-            background-color: #7cc576;
+            background-color: #6cab67;
         }
         &:active {
             color: #fff;

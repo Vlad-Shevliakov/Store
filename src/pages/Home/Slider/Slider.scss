@@ -4,56 +4,21 @@ $main-black: #343434;
 $desktop-size: 1200px;
 $tablet-size: 768px;
 
-.SliderWrapper {
-    margin: 0 auto;
-    width: 600px;
-	height: 400px;
-	position: relative;
-	overflow: hidden;
-}
+$arrow-lr: 6px;
+$arrow-color: #f0ffff;
 
-.Slider {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-	position: absolute;
-	top: 0;
-    left: 0;
-}
-
-.SliderItem {
-    float: left;
-	position: relative;
-	width: 600px;
-	height: 400px;
-}
-
-.InfoBox {
-    position: absolute;
-	top: 20px;
-    left: 35px;
-    h3 {
-        font: inherit;
-        font-size:36px;
-	    text-transform:uppercase;
-    }
-    span {
-        font-size:21px;
-    }
-}
-
-.ArrowButton {
+@mixin slider_arrow {
     position: absolute;
 	width: 50px;
 	height: 60px;
 	top: 50%;
 	margin-top: -25px;
 	line-height: 57px;
-	text-align: center;
+    text-align: center;
+    color: $arrow-color;
 	cursor: pointer;
-	background: rgba(0, 0, 0, .1);
+    background-color: rgba(0, 0, 0, .1);
+    text-shadow: rgba(0, 0, 0, .1) 2px 2px 0px;
     z-index: 100;
     
     -webkit-user-select: none;
@@ -68,51 +33,104 @@ $tablet-size: 768px;
     transition: all 0.1s ease;
 
     &:hover {
-        background: rgba(0, 0, 0, 0.3);
+        background-color: rgba(0, 0, 0, .2);
+    }
+
+    &:active {
+        background-color: rgba(0, 0, 0, .1);
     }
 }
 
-#next {
-	right: -50px;
-	border-radius: 7px 0px 0px 7px;
+@mixin crumb {
+    margin: 0 4px;
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    opacity: 0.5;
+    position: relative;
+    top: 0;
 }
 
-#previous {
-	left: -50px;
-	border-radius: 0px 7px 7px 7px;
+@keyframes fade-effect {
+    from {
+        opacity: 4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+.SliderWrapper {
+    height: 400px;
+	position: relative;
+    overflow: hidden;
+    text-shadow: rgba(0, 0, 0, .1) 2px 2px 0px;
+    // background-color: rgb(36, 120, 115);
+    background: url('https://images.wallpaperscraft.ru/image/doroga_tuman_povorot_131698_1280x720.jpg') no-repeat;
+    background-size: cover;
+    background-position: 0 70%;
+}
+
+
+.Crumb_container {
+    position: absolute;
+    min-width: 20px;
+    // height: 15px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+
+    ul {
+        width: 100%;
+        padding: 0;
+        margin: 15px 0;
+        list-style: none;
+    }
 }
 
 .Counter {
-    top: 30px;
-	right: 35px;
-	width: auto;
+    color: $main-black;
 	position: absolute;
+	right: 35px;
+    top: 30px;
+    font-weight: 500;
 }
 
-.Pagination {
-    min-width: 20px;
-	margin-top: 350px;
-	margin-left: auto;
-	margin-right: auto;
-	height: 15px;
-	position: relative;
-    text-align: center;
-    ul {
-        width: 100%;
-        li {
-            margin: 0 4px;
-            display: inline-block;
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            background: #fff;
-            opacity: 0.5;
-            position: relative;
-            top: 0;
-                
-        }
-    }
+
+.Crumb {
+    @include crumb();
 }
+
+.Crumb_a {
+    @include crumb();
+    opacity: 1;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 0px;
+    width: 8px;
+    height: 8px;
+}
+
+
+
+
+
+.Arrow_prev {
+    @include slider_arrow();
+    left: $arrow-lr;
+    border-radius: 7px 0px 0px 7px;
+}
+
+.Arrow_next {
+    @include slider_arrow();
+    right: $arrow-lr;
+    border-radius: 0px 7px 7px 0px;
+}
+
+
 
 
 @media (min-width: $tablet-size) {
@@ -120,5 +138,27 @@ $tablet-size: 768px;
 }
 
 @media (min-width: $desktop-size) {
+
+    .SliderWrapper {
+        &:hover {
+            .Arrow_prev {
+                left: $arrow-lr;
+            }
+    
+            .Arrow_next {
+                right: $arrow-lr;
+            }
+        }
+    }
+
+    .Arrow_prev {
+        left: -50px;
+        border-radius: 7px 0px 0px 7px;
+    }
+    
+    .Arrow_next {
+        right: -50px;
+        border-radius: 0px 7px 7px 0px;
+    }
 
 }

@@ -44,6 +44,8 @@ $tablet-size: 768px;
     }
     .LogoBox {
         display: block;
+        position: relative;
+        top: 5px;
         width: 160px;
     }
 }
