@@ -1,76 +1,56 @@
-import React, { Component } from 'react'
+import React from 'react'
 import classes from './Slider.scss'
+import Swapper from './Swapper/Swapper'
 
-import Swapper from '../../../HOC/Swapper/Swapper'
-import Dots from './Slider_UI/Dots'
 
-class Slider extends Component {
+const Slider = props => {
    
-    constructor(props) {
-        super(props)
-        this.state = {
-            sliderList: [
+    const sliderList = [
+        {
+            top: '1',
+            sub: 'Низкие цены',
+            image: '2ECC40'
+        },
+        {
+            top: '2',
+            sub: 'Быстрая доставка',
+            image: 'ffcc00'
+        },
+        {
+            top: '3',
+            sub: 'Качество товара',
+            image: 'ffff00'
+        },
+        {
+            top: '4',
+            sub: 'Качество товара',
+            image: 'ff3300'
+        },
+    ]
+
+    return (
+        <section className={classes.SliderWrapper}>
+            <Swapper loop auto>
                 {
-                    top: 'Один',
-                    sub: 'Низкие цены',
-                    image: ''
-                },
-                {
-                    top: 'Два',
-                    sub: 'Быстрая доставка',
-                    image: ''
-                },
-                {
-                    top: 'Три',
-                    sub: 'Качество товара',
-                    image: ''
+                    sliderList.map((item, ind) => {
+                        return (
+                            <li 
+                                key={ind}
+                                className={classes.Item}
+                                style={{
+                                    backgroundColor: `#${item.image}`
+                                }}
+                            >
+                                <p>
+                                    { item.top }
+                                </p>
+                            </li>
+                        )
+                    })
                 }
-            ]
-        }
-    }
-
-
-    render() {
-        return (
-            <section className={classes.SliderWrapper}>
-                <div className={classes.Slider}>
-                    <Swapper loop auto widgets={[Dots]} >
-                        <div className={classes.TestForItem}>Frame</div>
-                        <div className={classes.TestForItem}>Frame 2</div>
-                        <div className={classes.TestForItem}>Frame 3</div>
-                    </Swapper>
-                </div>
-                {/* <div> 
-                    onClick={this.slideToLeft}
-                    className={classes.Arrow_prev}
-                >
-                </div>
-                <div> 
-                    onClick={this.slideToRight}
-                    className={classes.Arrow_next}
-                >
-                </div> */}
-                {/* <span className={classes.Counter}>
-                    {this.state.position + 1}/{this.state.sliderList.length}
-                </span>
-                <div className={classes.Crumb_container} >
-                    <ul>
-                        {
-                            this.state.sliderList.map((item, ind) => {
-                                return (
-                                    <li 
-                                        key={ind}
-                                        className={classes[ind === this.state.position ? 'Crumb_a' : 'Crumb']}
-                                    />
-                                )
-                            })
-                        }
-                    </ul>
-                </div> */}
-            </section>
-        )
-    }
-
+            </Swapper>
+        </section>
+    )
 }
 
 

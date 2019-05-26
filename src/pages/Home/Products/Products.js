@@ -53,6 +53,12 @@ const Products = props => {
 
     return (
         <section className={classes.ProductsSection}>
+            <div className={classes.title_wrapper}>
+                <h2 className={classes.Title}>
+                    <i className="far fa-star"></i>
+                    Популярное
+                </h2>
+            </div>
             <div className={classes.ProductsWrapper}>
                 <ul className={classes.Products_list}>
                     {

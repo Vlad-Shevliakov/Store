@@ -1,17 +1,16 @@
 import React, { Component } from 'react'
-
+import classes from './Swapper.scss'
+import Dots from '../Slider_UI/Dots/Dots'
 
 const translateXY = (el, x, y, duration = 0) => {
     if (!el) return
     el.style.opacity = '1'
-
-    // animation
+    // для анимации
     el.style.transitionDuration = duration + 'ms'
     el.style.webkitTransitionDuration = duration + 'ms'
     el.style.transform = `translate(${x}px, ${y}px)`
     el.style.webkitTransform = `translate(${x}px, ${y}px) translateZ(0)`
 }
-
 
 const Swapper = class extends Component {
 
@@ -31,8 +30,8 @@ const Swapper = class extends Component {
         axis: 'x',
         auto: false,
         loop: false,
-        interval: 6000,
-        duration: 800,
+        interval: 4000,
+        duration: 600,
         minMove: 42
     }
 
@@ -330,7 +329,7 @@ const Swapper = class extends Component {
                 translateXY(prev, 0, 0, duration)
                 newCurrentId = this.getFrameId('prev')
             break
-            default: // back to origin
+            default:
                 translateXY(current, 0, 0, duration)
             if (axis === 'x') {
                 translateXY(prev, -this.state.frameWidth, 0, duration)
@@ -346,24 +345,17 @@ const Swapper = class extends Component {
         this.setState({ current: newCurrentId })
     }
 
+
     render () {
 
         const { frames, current } = this.state
-        const { axis, loop, auto, interval, widgets } = this.props
-
-        console.log(this.state.frames.length)
 
         return (
-            <div style={{
-                width: '100%',
-                height: '400px',
-                position: 'relative'
-            }}>
+            <div className={classes.Swapper}>
                 <div
                     ref='wrapper'
-                    style={{overflow: 'hidden'}}
                     onTouchStart={this.onTouchStart}
-                    className={this.props.className}
+                    className={classes.SliderList}
                     onMouseDown={this.onTouchStart}
                 >
                     {
@@ -374,7 +366,6 @@ const Swapper = class extends Component {
                                     key={i}
                                     style={{
                                         width: '100%',
-                                        height: '400px',
                                         position: 'absolute'
                                     }}
                                 >
@@ -387,17 +378,18 @@ const Swapper = class extends Component {
                         this.props.frames && this.props.children
                     }
                 </div>
-                {
-                    widgets && [].concat(widgets).map((Widget, i) => (
-                    <Widget
-                        key={i}
-                        index={current}
-                        total={frames.length}
-                        prevHandler={this.prev}
-                        nextHandler={this.next}
-                        axis={axis} loop={loop} auto={auto} interval={interval} />
-                    ))
-                }
+                <Dots 
+                    index={current}
+                    total={frames.length} 
+                /> 
+                <div 
+                    onClick={this.prev}
+                    className={classes.Arrow_prev}
+                />
+                <div
+                    onClick={this.next}
+                    className={classes.Arrow_next}
+                />
             </div>
         )
     }

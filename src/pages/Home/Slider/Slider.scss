@@ -7,188 +7,47 @@ $tablet-size: 768px;
 $arrow-lr: 6px;
 $arrow-color: #f0ffff;
 
-@mixin slider_arrow {
-    position: absolute;
-	width: 50px;
-	height: 60px;
-	top: 50%;
-	margin-top: -25px;
-	line-height: 57px;
-    text-align: center;
-	cursor: pointer;
-    background-color: rgba(0, 0, 0, .1);
-    text-shadow: rgba(0, 0, 0, .1) 2px 2px 0px;
-    z-index: 100;
-    
-    -webkit-user-select: none;
-	-moz-user-select: none;
-	-khtml-user-select: none;
-	-ms-user-select: none;
-
-	-webkit-transition: all 0.1s ease;
-	-moz-transition: all 0.1s ease;
-	-o-transition: all 0.1s ease;
-	-ms-transition: all 0.1s ease;
-    transition: all .2s ease;
-
-    &:hover {
-        background-color: rgba(0, 0, 0, .2);
-    }
-
-    &:active {
-        background-color: rgba(0, 0, 0, .1);
-    }
-}
-
-@mixin crumb {
-    margin: 0 4px;
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: rgb(255, 255, 255);
-    opacity: 0.5;
-    position: relative;
-    top: 0;
-}
-
-@keyframes fade-effect {
-    from {
-        opacity: 4;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-
-.TestForItem {
-    height: 400px;
-    background: url('https://images.wallpaperscraft.ru/image/doroga_tuman_povorot_131698_1280x720.jpg') no-repeat;
-    background-size: cover;
-    background-position: 0 70%;
-}
-
 .SliderWrapper {
-    height: 400px;
+    margin: 0 auto;
+    max-width: 1400px;
+    height: 240px;
 	position: relative;
     overflow: hidden;
-    color: #f0ffff;
+    color: #343434;
     text-shadow: rgba(0, 0, 0, .1) 2px 2px 0px;
     // background-color: rgb(36, 120, 115);
-    
 }
 
 
-.Crumb_container {
-    position: absolute;
-    min-width: 20px;
-    // height: 15px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
-
-    ul {
-        width: 100%;
-        padding: 0;
-        margin: 15px 0;
-        list-style: none;
+.Item {
+    height: 240px;
+    // width: 100%;s
+    // background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+        font: inherit;
+        font-size: 50px;
+        font-weight: 700;
     }
 }
-
-.Counter {
-    color: $main-black;
-	position: absolute;
-	right: 35px;
-    top: 30px;
-    font-weight: 500;
-}
-
-
-.Crumb {
-    @include crumb();
-}
-
-.Crumb_a {
-    @include crumb();
-    opacity: 1;
-    box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 0px;
-    width: 8px;
-    height: 8px;
-}
-
-
-
-.Arrow_prev {
-    @include slider_arrow();
-    left: $arrow-lr;
-    border-radius: 9px 0px 0px 9px;
-    &::after {
-        content: '';
-        display: inline-block;
-        position: absolute;
-        top: 21px;
-        left: 18px;
-        width: 17px;
-        height: 17px;
-        border-top: 3px solid $arrow-color;
-        border-right: 3px solid $arrow-color;
-        -moz-transform: rotate(-135deg);
-        -webkit-transform: rotate(-135deg);
-        transform: rotate(-135deg);
-    }
-}
-
-.Arrow_next {
-    @include slider_arrow();
-    right: $arrow-lr;
-    border-radius: 0px 9px 9px 0px;
-    &::after {
-        content: '';
-        position: absolute;
-        top: 21px;
-        right: 18px;
-	    display: inline-block;
-        width: 17px;
-        height: 17px;
-        border-top: 3px solid $arrow-color;
-        border-right: 3px solid $arrow-color;
-        -moz-transform: rotate(45deg);
-        -webkit-transform: rotate(45deg);
-        transform: rotate(45deg);
-    }
-}
-
 
 
 
 @media (min-width: $tablet-size) {
     
+    .SliderWrapper, .Item {
+        height: 270px;
+    }
 }
 
 @media (min-width: $desktop-size) {
 
-    .SliderWrapper {
-        &:hover {
-            .Arrow_prev {
-                left: $arrow-lr;
-            }
-    
-            .Arrow_next {
-                right: $arrow-lr;
-            }
-        }
-    }
-
-    .Arrow_prev {
-        left: -50px;
-        border-radius: 7px 0px 0px 7px;
-    }
-    
-    .Arrow_next {
-        right: -50px;
-        border-radius: 0px 7px 7px 0px;
+    .SliderWrapper, .Item {
+        height: 350px;
     }
 
 }
