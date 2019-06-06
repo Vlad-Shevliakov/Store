@@ -44,6 +44,7 @@ $tablet-size: 768px;
 }
 
 .UserInteraction__shop {
+    position: relative;
     display: inline-block;
     i {
         display: block;
@@ -137,6 +138,7 @@ $tablet-size: 768px;
 
     .UserInteraction__shop {
         display: inline-block;
+        // height: 112px;
         i {
             font-size: $icon-size;
             transition: all 120ms ease-in;
@@ -147,6 +149,9 @@ $tablet-size: 768px;
             transition: all 120ms ease-in;
         }
         &:hover {
+            & > div {
+                display: block;
+            }
             & i,
             & .SubText {
                 cursor: pointer;

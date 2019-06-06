@@ -122,7 +122,7 @@ $mobile-size: 320px;
 @media (min-width: $desktop-size) {
     
     .ProductUnit {
-        flex-basis: 20%;
+        // flex-basis: 20%;
         transition: all 0.3s ease-in-out;
         border-right: 1px solid $border_color-d;
         &:hover {

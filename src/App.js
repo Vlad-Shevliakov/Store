@@ -9,13 +9,15 @@ import Home from './pages/Home/Home'
 const Products = () => (
     <h1 style={{
         top: '70px',
-        left: '50%'
+        left: '50%',
+        textAlign: 'center'
     }}>Товары</h1>
 )
 const About = () => (
     <h1 style={{
         top: '70px',
-        left: '50%'
+        left: '50%',
+        textAlign: 'center'
     }}>О нас</h1>
 )
 

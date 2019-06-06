@@ -1,0 +1,52 @@
+$main-color: rgb(141, 194, 126);
+$main-black: #343434;
+
+$desktop-size: 1200px;
+$tablet-size: 768px;
+
+@keyframes show-cart {
+    from {
+        opacity: .5;
+        transform: scale(0.9)
+    }
+    to {
+        opacity: 1;
+        transform: scale(1)
+    }
+}
+
+.container {
+    position: absolute;
+    z-index: 999;
+    display: none;
+    width: 400px;
+    border-radius: 12px;
+    left: 50%;
+    margin-left: -200px;
+    background-color: #fff;
+    border-bottom: 3px solid #cdcdcd;
+    box-shadow: 0px 0px 33px 0px rgba(0,0,0,0.48);
+    animation: show-cart .3s ease-in-out;
+
+}
+
+
+
+.CartPreview {
+    
+}
+
+
+
+
+
+
+
+
+@media (min-width: $tablet-size) {
+    
+}
+
+@media (min-width: $desktop-size) {
+
+}

@@ -1,0 +1,21 @@
+$main-color: #7cc576;
+$main-black: #343434;
+
+$desktop-size: 1200px;
+$tablet-size: 768px;
+
+
+
+
+.ArrowModal {
+    position: absolute;
+    z-index: 999;
+    display: block;
+    width: 400px;
+    border-radius: 12px;
+    left: 50%;
+    margin-left: -200px;
+    background-color: #fff;
+    border-bottom: 3px solid #cdcdcd;
+    box-shadow: 0px 0px 33px 0px rgba(0,0,0,0.48);
+}

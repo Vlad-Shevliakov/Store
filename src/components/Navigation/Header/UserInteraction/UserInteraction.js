@@ -1,6 +1,7 @@
 import React from 'react'
 import classes from './UserInteraction.scss'
 
+import CartPreview from '../CartPreview/CartPreview'
 import Input from '../../../UI/Inputs/Input'
 import Button from '../../../UI/Button/Button'
 
@@ -10,6 +11,11 @@ const UserInteraction = (props) => {
         event.preventDefault()
         console.log('BTN')
     }
+
+    // тест
+    const itemsList = [
+        1, 2, 3
+    ]
 
     return (
         <ul className={classes.UserInteraction}>
@@ -37,7 +43,10 @@ const UserInteraction = (props) => {
             <li className={classes.Container}>
                 <div className={classes.UserInteraction__shop }>
                     <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-                    <span className={classes.SubText}>Товары</span>
+                    <span className={classes.SubText}>корзина</span>
+                    <CartPreview 
+                        cartItems={itemsList} 
+                    />
                 </div>
                 <div className={classes.UserInteraction__auth}>
                     <i className="fa fa-user" aria-hidden="true"></i>
