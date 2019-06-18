@@ -1,15 +1,127 @@
-
-.Booking {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    padding: 14px 20px;
-
-}
+$desktop-size: 1200px;
 
 
-.Item {
-    img {
-        width: 80px;
+
+
+
+@media (min-width: $desktop-size) {
+
+    .container {
+        position: relative;
     }
+        
+    .Booking {
+        list-style: none;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        padding: 14px 10px;
+        max-height: 510px;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+            width: 5px;
+            background-color: #F5F5F5;
+        }
+        &::-webkit-scrollbar-thumb {
+            box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            background: #5CDB95;
+        }
+    }
+        
+    .Item {
+        position: relative;
+        padding-bottom: 14px;
+        padding-top: 6px;
+        display: flex;
+        
+        // i {
+        //     position: absolute;
+        //     top: 5px;
+        //     right: 0;
+        //     color: #b2b2b2;
+        //     cursor: pointer;
+        //     transition: .3s;
+        //     &:hover {
+        //         color: #787878;
+        //     }
+        // }
+
+        &::before {
+            content: "";
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 0 auto;
+            position: absolute;
+            bottom: 0;
+            width: 310px;
+            border-bottom: 1px solid rgb(207, 207, 207);
+        }
+    }
+
+    .ImgBox {
+        display: inline-block;
+        width: 80px;
+        flex-shrink: 0;
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+    
+
+    .otherData {
+        position: relative;
+        display: flex;
+        align-content: flex-start;
+        flex-wrap: wrap;
+        flex-grow: 1;
+        align-self: center;
+
+        .prodTitle {
+            font: inherit;
+            flex-basis: 70%;
+            text-align: start;
+            font-size: 17px;
+            a {
+                text-decoration: none;
+                color: #343434;
+                transition: .3s;
+                &:hover {
+                    color: #b7b7b7;
+                }
+            }
+        }
+
+        .Price {
+            flex-basis: 30%;
+            text-align: right;
+            align-self: center;
+        }
+
+        .Quantity {
+
+            strong {
+                font: inherit;
+                font-weight: 500;
+            }
+
+
+            i {
+                color: #b2b2b2;
+                cursor: pointer;
+                transition: .3s;
+                &:hover {
+                    color: #787878;
+                }
+            }
+        }
+    }
+        
+    .btnbox {
+        padding: 7px 0;
+    }
+    
 }

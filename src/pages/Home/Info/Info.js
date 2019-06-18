@@ -7,7 +7,7 @@ const Info = props => {
     const infoItems = [
         {
             heading: 'Акции',
-            description: 'наличие товара по акции',
+            description: 'Наличие товара по акции',
             to: '',
             icon: 'fas fa-gift',
         },

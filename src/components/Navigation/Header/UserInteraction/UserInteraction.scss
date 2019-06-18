@@ -5,7 +5,7 @@ $icon-size: 14px;
 $main-color: #b8cd07;
 $main-black: #343434;
 $hover-color: #7cc576;
-$tablet_mob-color: #343434;
+$tablet_mob-color: #05386B;
 
 
 $desktop-size: 1200px;
@@ -119,7 +119,6 @@ $tablet-size: 768px;
         .SubText {
             display: inline;
             font-weight: 500;
-            border-bottom: 2px dashed $main-black;
             padding-bottom: 3px;
         }
     }
@@ -152,7 +151,7 @@ $tablet-size: 768px;
             & > div {
                 display: block;
             }
-            & i,
+            & ._shopi,
             & .SubText {
                 cursor: pointer;
                 color: $hover-color;

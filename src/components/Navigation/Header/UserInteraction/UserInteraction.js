@@ -12,10 +12,20 @@ const UserInteraction = (props) => {
         console.log('BTN')
     }
 
-    // тест
-    const itemsList = [
-        1, 2, 3
-    ]
+    
+    const itemsList = []
+
+    // Это для теста!
+
+    for (let j = 0; j <= 10; j++) {
+        itemsList.push(
+            {
+                amount: Math.round(Math.random() * 5) + 1,
+                price: 999,
+                name:  "Some name some name"
+            }
+        )
+    }
 
     return (
         <ul className={classes.UserInteraction}>
@@ -42,8 +52,10 @@ const UserInteraction = (props) => {
             </li>
             <li className={classes.Container}>
                 <div className={classes.UserInteraction__shop }>
-                    <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-                    <span className={classes.SubText}>корзина</span>
+                    <span className={classes._shopi}>
+                        <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+                    </span>
+                    <span className={classes.SubText}>Корзина</span>
                     <CartPreview 
                         cartItems={itemsList} 
                     />
