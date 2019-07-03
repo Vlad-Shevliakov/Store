@@ -17,13 +17,19 @@ const ContentItems = props => {
             text: 'Личный кабинет',
             facls: 'fa fa-user',
             aria: true,
-            to: '#'
+            to: '/profile'
         },
         {
             text: 'Каталог',
             facls: 'fa fa-list',
             aria: true,
             to: '/products'
+        },
+        {
+            text: 'Корзина',
+            facls: 'fa fa-shopping-cart',
+            aria: true,
+            to: '/cart'
         },
 
     ]

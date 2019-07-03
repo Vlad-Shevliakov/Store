@@ -1,0 +1,46 @@
+$desktop-size: 1200px;
+$tablet-size: 768px;
+$main-black: #343434;
+$second-green: #5CDB95;
+
+
+.Summary {
+    background-color: rgb(156, 156, 156);
+    order: 1;
+}
+
+.info_box {
+    background: $second-green;
+}
+
+.title {
+    color: #fff;
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 27px;
+    margin: 0;
+    padding: 19px 0;
+    padding-left: 20px;
+ 
+}
+
+
+@media (min-width: $tablet-size) {
+    
+    .Summary {
+        order: 2;
+        flex-basis: 35%;
+        padding: 0 5px;
+
+        height: 100%; // t
+    }
+
+}
+
+@media (min-width: $desktop-size) {
+    
+    .Summary {
+        flex-basis: 30%;
+    }
+
+}

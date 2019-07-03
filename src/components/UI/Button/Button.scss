@@ -129,29 +129,6 @@ $drawer-btn-color: #0d2744;
 
 
 
-
-.CheckoutBtn {
-    display: block;
-    margin: 0 auto;
-    width: 70%;
-    background-color: #5CDB95;
-    border: none;
-    padding: 10px 0;
-    font: inherit;
-    font-size: 18px;
-    font-weight: 400;
-    color: #1d1d1d;
-    border-radius: 4px;
-    outline: none;
-    cursor: pointer;
-    transition: .3s;
-    &:hover {
-        background-color: rgb(93, 239, 159)
-    }
-}
-
-
-
 @media (min-width: $tablet-size) {
     
     .NavSearch_Button:hover {

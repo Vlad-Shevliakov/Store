@@ -3,7 +3,6 @@ $desktop-size: 1200px;
 
 
 
-
 @media (min-width: $desktop-size) {
 
     .container {
@@ -36,18 +35,6 @@ $desktop-size: 1200px;
         padding-top: 6px;
         display: flex;
         
-        // i {
-        //     position: absolute;
-        //     top: 5px;
-        //     right: 0;
-        //     color: #b2b2b2;
-        //     cursor: pointer;
-        //     transition: .3s;
-        //     &:hover {
-        //         color: #787878;
-        //     }
-        // }
-
         &::before {
             content: "";
             left: 50%;
@@ -122,6 +109,28 @@ $desktop-size: 1200px;
         
     .btnbox {
         padding: 7px 0;
+    }
+
+    .CheckoutBtn {
+        text-decoration: none;
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+        width: 70%;
+        background-color: #5CDB95;
+        border: none;
+        padding: 10px 0;
+        font: inherit;
+        font-size: 18px;
+        font-weight: 400;
+        color: #343434;
+        border-radius: 4px;
+        outline: none;
+        cursor: pointer;
+        transition: .3s;
+        &:hover {
+            background-color: rgb(93, 239, 159)
+        }
     }
     
 }

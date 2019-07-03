@@ -1,7 +1,7 @@
 import React from 'react'
 import classes from './Booking.scss'
 
-import Button from '../../../../../components/UI/Button/Button'
+import { Link } from 'react-router-dom'
 
 // Это тест, только для вида!
 import Bag from '../../../../../assets/rastr/test-bag_1.jpg'
@@ -45,11 +45,12 @@ const Booking = props => {
                 }
             </ul>
             <div className={classes.btnbox}>
-                <Button
-                    classType="CheckoutBtn" // тут ссылка
+                <Link
+                    className={classes.CheckoutBtn}
+                    to={'cart'}
                 >
                     Продолжить
-                </Button>
+                </Link>
             </div>
         </div>
     )

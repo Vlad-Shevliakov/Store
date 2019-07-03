@@ -1,0 +1,45 @@
+$desktop-size: 1200px;
+$tablet-size: 768px;
+$main-black: #343434;
+
+
+.Orders {
+    order: 2;
+}
+
+
+.title {
+    color: $main-black;
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 27px;
+    margin: 0;
+    padding: 19px 0;
+    padding-left: 20px;
+    background-color: #eee;
+}
+
+
+@media (min-width: $tablet-size) {
+    
+    .Orders {
+        order: 1;
+        flex-basis: 65%;
+
+
+        height: 100%; //t
+    }
+
+}
+
+@media (min-width: $desktop-size) {
+   
+    .Orders {
+        flex-basis: 70%;
+    }
+
+    .title {
+        padding-left: 25px;
+    }
+
+}

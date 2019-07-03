@@ -4,6 +4,8 @@ import { Switch, Route } from 'react-router-dom'
 import Layout from './HOC/Layout/Layout'
 
 import Home from './pages/Home/Home'
+import Cart from './pages/Cart/Cart'
+import Profile from './pages/Profile/Profile'
 
 // тест
 const Products = () => (
@@ -30,6 +32,8 @@ const App = class extends Component {
                     <Route path={'/'} exact component={Home} />
                     <Route path={'/products'} component={Products} />
                     <Route path={'/about'} component={About} />
+                    <Route path={'/cart'} component={Cart} />
+                    <Route path={'/profile'} component={Profile} />
                 </Switch>
             </Layout>
         )
