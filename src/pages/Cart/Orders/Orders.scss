@@ -4,6 +4,7 @@ $main-black: #343434;
 
 
 .Orders {
+    // background: rgb(239, 239, 173);
     order: 2;
 }
 
@@ -20,14 +21,46 @@ $main-black: #343434;
 }
 
 
+.labels {
+    display: none;
+}
+
+
+.list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
 @media (min-width: $tablet-size) {
     
     .Orders {
         order: 1;
         flex-basis: 65%;
+    }
 
+    .labels {
+        margin: 0;
+        padding: 16px 8px 10px 8px;
+        list-style: none;
+        display: flex;
+        color: #343434;
+        font-weight: 500;
+        border-bottom: 1px solid $main-black;
+    
+        
+        li {
+            flex-basis: 15%;
 
-        height: 100%; //t
+            text-align: start;
+            &:first-child {
+                flex-basis: 55%;
+                span {
+                    margin-left: 35px;
+                }
+            }
+        }
     }
 
 }

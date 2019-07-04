@@ -85,6 +85,25 @@ $drawer-btn-color: #0d2744;
 }
 
 
+.CartRemoveButton {
+    position: absolute;
+    cursor: pointer;
+    right: 20px;
+    bottom: 20px;
+    background: none;
+    padding: 8px;
+    color: rgb(117, 96, 96);
+    outline: none;
+    border: none;
+    transition: .3s;
+
+    &:hover {
+        color: rgb(222, 51, 51);
+    }
+    
+}
+
+
 
 
 
@@ -124,6 +143,11 @@ $drawer-btn-color: #0d2744;
         &:hover {
             background-color: $main-color;
         }
+    }
+
+
+    .CartRemoveButton:hover {
+        color: rgb(222, 51, 51);
     }
 }
 

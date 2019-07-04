@@ -5,8 +5,9 @@ $second-green: #5CDB95;
 
 
 .Summary {
-    background-color: rgb(156, 156, 156);
+    background-color: rgb(188, 188, 188);
     order: 1;
+
 }
 
 .info_box {
@@ -32,7 +33,7 @@ $second-green: #5CDB95;
         flex-basis: 35%;
         padding: 0 5px;
 
-        height: 100%; // t
+        height: 100vh; // t
     }
 
 }

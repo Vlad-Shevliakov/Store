@@ -1,0 +1,75 @@
+$desktop-size: 1200px;
+$tablet-size: 768px;
+$main-black: #343434;
+$second-green: #5CDB95;
+
+
+
+
+.order_item {
+    display: flex;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+
+    // background: red;
+
+    position: relative;
+    padding: 14px 8px 10px 8px;
+    border-bottom: 1px solid #ccc;
+
+}
+
+// фото и инфо.
+.group_one {
+    flex-basis: 55%;
+    display: flex;
+}
+
+.product_img {
+    flex-basis: 35%;
+    img {
+        width: 120px;
+        height: 160px;
+    }
+}
+
+.product_details {
+    flex-basis: 65%;
+}
+
+
+
+.group_two {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-basis: 45%;
+    display: flex;
+    // justify-content: space-around;
+}
+
+// цена и к-во.
+.price,
+.product_quantity,
+.subtotal {
+    flex-basis: 33%;
+}
+
+.product_quantity {
+    float: left;
+    input {
+        width: 60px;
+    }
+}
+
+@media (min-width: $tablet-size) {
+    
+    
+
+}
+
+@media (min-width: $desktop-size) {
+    
+    
+
+}
