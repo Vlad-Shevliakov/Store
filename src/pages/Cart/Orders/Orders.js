@@ -6,7 +6,10 @@ import OrderItem from './OrderItem/OrderItem'
 const Orders = props => {
 
 
-    const { orders } = props
+    const { 
+        orders,
+        removeHandler
+    } = props
 
 
     return (
@@ -30,6 +33,7 @@ const Orders = props => {
                                 image={order.img}
                                 code={order.code}
                                 price={order.price}
+                                removeHandler={removeHandler}
                             />
                         )
                     })

@@ -5,21 +5,31 @@ import Button from '../../../../components/UI/Button/Button'
 
 const OrderItem = props => {
 
+
+    const combinedClasses = [classes.order_item]
+
+
     const {
         title,
         image,
         price,
-        code
+        code,
+        removeHandler
     } = props
+
+    const removeFunc = () => {
+        removeHandler(code)
+        combinedClasses.push('del')
+    }
 
     return (
         <li>
-            <div className={classes.order_item}>
+            <div className={combinedClasses.join(' ')}>
                 <div className={classes.group_one}>
                     <div className={classes.product_img}>
                         <img src={image} alt={title}/>
                     </div>
-                    {/*  */}
+
                     <div className={classes.product_details}>
                         <p>
                             <strong className={classes.quantity}>
@@ -49,6 +59,7 @@ const OrderItem = props => {
                 {/*  */}
                 <Button
                     classType='CartRemoveButton'
+                    func={removeFunc}
                 >
                     <i className="fa fa-trash" aria-hidden="true" />
                 </Button>
