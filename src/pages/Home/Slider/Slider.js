@@ -1,54 +1,46 @@
 import React from 'react'
 import classes from './Slider.scss'
-import Swapper from './Swapper/Swapper'
+import Carousel from 'react-slick'
 
 
 const Slider = props => {
    
     const sliderList = [
         {
-            top: '1',
-            sub: 'Низкие цены',
-            image: '2ECC40'
+            pic: "https://picsum.photos/id/1/1450/240",
         },
         {
-            top: '2',
-            sub: 'Быстрая доставка',
-            image: 'ffcc00'
+            pic: "https://picsum.photos/id/2/1450/240",
         },
         {
-            top: '3',
-            sub: 'Качество товара',
-            image: 'ffff00'
+            pic: "https://picsum.photos/id/3/1450/240",
         },
         {
-            top: '4',
-            sub: 'Качество товара',
-            image: 'ff3300'
-        },
+            pic: "https://picsum.photos/id/4/1450/240",
+        }
     ]
+
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      };
 
     return (
         <section className={classes.SliderWrapper}>
-            <Swapper loop auto>
-                {
-                    sliderList.map((item, ind) => {
-                        return (
-                            <li 
-                                key={ind}
-                                className={classes.Item}
-                                style={{
-                                    backgroundColor: `#${item.image}`
-                                }}
-                            >
-                                <p>
-                                    { item.top }
-                                </p>
-                            </li>
-                        )
-                    })
-                }
-            </Swapper>
+            <Carousel
+                {...settings}
+            >
+                { sliderList.map((item, ind) => {
+                    return (
+                        <div key={ind}>
+                            <img src={item.pic} alt="###"/>
+                        </div>
+                    )
+                }) }
+            </Carousel>
         </section>
     )
 }
