@@ -1,9 +1,9 @@
 import React from 'react'
 import classes from './Slider.scss'
-import Carousel from 'react-slick'
 
+import Carousel from '../../../HOC/Slider/Carousel'
 
-const Slider = props => {
+const MainSlider = props => {
    
     const sliderList = [
         {
@@ -20,18 +20,13 @@ const Slider = props => {
         }
     ]
 
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1
-      };
+    
 
     return (
         <section className={classes.SliderWrapper}>
             <Carousel
-                {...settings}
+                autoPlay={true}
+                infiniteLoop={true}
             >
                 { sliderList.map((item, ind) => {
                     return (
@@ -46,4 +41,4 @@ const Slider = props => {
 }
 
 
-export default Slider
+export default MainSlider

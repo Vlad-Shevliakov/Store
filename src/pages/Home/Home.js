@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Home.scss'
 
-import Slider from './Slider/Slider'
+import MainSlider from './MainSlider/MainSlider'
 import Products from './Products/Products'
 import Info from './Info/Info'
 
@@ -9,7 +9,7 @@ import Info from './Info/Info'
 const Home = props => {
     return (
         <div className={classes.Home}>
-            <Slider />
+            <MainSlider />
             <Products />
             <Info />
         </div>

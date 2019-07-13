@@ -1,0 +1,297 @@
+$arrow-lr: 6px;
+$arrow-color: #f0ffff;
+
+$desktop-size: 1200px;
+
+
+@mixin slider_arrow {
+    position: absolute;
+	width: 50px;
+	height: 60px;
+	top: 50%;
+	margin-top: -25px;
+	line-height: 57px;
+    text-align: center;
+	cursor: pointer;
+    background-color: rgba(0, 0, 0, .1);
+    text-shadow: rgba(0, 0, 0, .1) 2px 2px 0px;
+    z-index: 100;
+    border: none;
+    
+    transition: all .2s ease;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, .2);
+    }
+
+    &:active {
+        background-color: rgba(0, 0, 0, .1);
+    }
+}
+
+
+
+
+.control_prev {
+    @include slider_arrow();
+    left: $arrow-lr;
+    border-radius: 9px 0px 0px 9px;
+    &::after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 21px;
+        left: 18px;
+        width: 17px;
+        height: 17px;
+        border-top: 3px solid $arrow-color;
+        border-right: 3px solid $arrow-color;
+        -moz-transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+    }
+}
+
+.control_next {
+    @include slider_arrow();
+    right: $arrow-lr;
+    border-radius: 0px 9px 9px 0px;
+    &::after {
+        content: '';
+        position: absolute;
+        top: 21px;
+        right: 18px;
+	    display: inline-block;
+        width: 17px;
+        height: 17px;
+        border-top: 3px solid $arrow-color;
+        border-right: 3px solid $arrow-color;
+        -moz-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+}
+
+
+
+// главный слайдер
+.carousel.carousel_slider {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+}
+
+
+
+// sub слайдер
+.carousel {
+    position: relative;
+    width: 100%;
+
+
+    & * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+
+    & img {
+        width: 100%;
+        display: inline-block;
+        pointer-events: none;
+    }
+
+}
+
+
+
+
+.slider_wrapper {
+    overflow: hidden;
+    margin: auto;
+    width: 100%;
+    -webkit-transition: height 0.15s ease-in;
+    -moz-transition: height 0.15s ease-in;
+    -ms-transition: height 0.15s ease-in;
+    -o-transition: height 0.15s ease-in;
+    transition: height 0.15s ease-in;
+}
+
+
+
+
+.slider_wrapper.axis_horizontal .slider {
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.slider_wrapper.axis_horizontal .slider .slide {
+    flex-direction: column;
+    flex-flow: column;
+}
+
+
+
+.slider {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    list-style: none;
+    width: 100%;
+}
+
+
+.slider.animated {
+    -webkit-transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -ms-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+}
+
+
+.slide {
+    min-width: 100%;
+    margin: 0;
+    position: relative;
+    text-align: center;
+    background: #000;
+    & img {
+        width: 100%;
+        vertical-align: top;
+        border: 0;
+    }
+}
+
+
+.slide iframe {
+    display: inline-block;
+    width: calc(100% - 80px);
+    margin: 0 40px 40px;
+    border: 0;
+}
+
+
+
+
+
+.thumbs_wrapper {
+    overflow: hidden;
+}
+
+
+
+.thumbs {
+    -webkit-transition: all 0.15s ease-in;
+    -moz-transition: all 0.15s ease-in;
+    -ms-transition: all 0.15s ease-in;
+    -o-transition: all 0.15s ease-in;
+    transition: all 0.15s ease-in;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    position: relative;
+    list-style: none;
+    white-space: nowrap;
+}
+
+
+
+.thumb {
+    -webkit-transition: border 0.15s ease-in;
+    -moz-transition: border 0.15s ease-in;
+    -ms-transition: border 0.15s ease-in;
+    -o-transition: border 0.15s ease-in;
+    transition: border 0.15s ease-in;
+    display: inline-block;
+    width: 80px;
+    margin-right: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    border: 2px solid #fff;
+    padding: 2px;
+    & img {
+        vertical-align: top;
+    }
+}
+
+
+.thumb:focus {
+    border: 3px solid #ccc;
+    outline: none;
+}
+
+.thumb.selected,
+.thumb:hover {
+    border: 2px solid #333;
+}
+
+
+
+.dot {
+    -webkit-transition: opacity 0.25s ease-in;
+    -moz-transition: opacity 0.25s ease-in;
+    -ms-transition: opacity 0.25s ease-in;
+    -o-transition: opacity 0.25s ease-in;
+    transition: opacity 0.25s ease-in;
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+    background: #fff;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 8px;
+    outline: none;
+}
+
+.dot.selected,
+.dot:hover {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.control_dots {
+    position: absolute;
+    bottom: 0;
+    margin: 10px 0;
+    text-align: center;
+    width: 100%;
+}
+
+@media (min-width: $desktop-size) {
+
+    
+    .carousel.carousel_slider:hover {
+        .Arrow_prev {
+            left: $arrow-lr;
+        }
+
+        .Arrow_next {
+            right: $arrow-lr;
+        }
+    }
+    
+    
+
+    .Arrow_prev {
+        left: -50px;
+        border-radius: 7px 0px 0px 7px;
+    }
+    
+    .Arrow_next {
+        right: -50px;
+        border-radius: 0px 7px 7px 0px;
+    }
+
+}
