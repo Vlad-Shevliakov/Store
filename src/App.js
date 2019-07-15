@@ -24,7 +24,7 @@ const About = () => (
 )
 
 
-const App = class extends Component {
+class App extends Component {
     render() {
         return (
             <Layout>
