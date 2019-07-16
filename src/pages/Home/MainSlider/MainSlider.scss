@@ -1,0 +1,42 @@
+$main-color: #2ECC40;
+$main-black: #343434;
+
+$desktop-size: 1200px;
+$tablet-size: 768px;
+
+$arrow-lr: 6px;
+$arrow-color: #f0ffff;
+
+.SliderWrapper {
+    margin: 0 auto;
+    max-width: 1450px;
+    max-height: 350px;
+    height: 100%;
+	position: relative;
+    overflow: hidden;
+}
+
+
+.item {
+    box-sizing: border-box;
+    padding-top: 24.13%;
+    background-size: cover;
+    -moz-background-size: cover;  /* Firefox 3.6 */
+    background-position: center;  /* Internet Explorer 7/8 */
+    background-position: 50%;
+}
+
+@media (max-width: 444px) {
+    .item {
+        padding-top: 35%;
+    }
+}
+
+
+@media (min-width: $tablet-size) {
+    
+}
+
+@media (min-width: $desktop-size) {
+
+}
