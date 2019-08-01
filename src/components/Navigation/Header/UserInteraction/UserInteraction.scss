@@ -1,14 +1,4 @@
-$header-fontsize: 24px;
-$icon-size: 14px;
-
-$main-color: #b8cd07;
-$main-black: #343434;
-$hover-color: #7cc576;
-
-
-
-$desktop-size: 1200px;
-$tablet-size: 768px;
+@import '../../../../Variables.scss';
 
 
 .UserInteraction {
@@ -22,6 +12,7 @@ $tablet-size: 768px;
     justify-content: center;
     align-items: center;
 }
+
 
 .container {
     display: flex;
@@ -142,12 +133,11 @@ $tablet-size: 768px;
         display: inline-block;
         // height: 112px;
         i {
-            font-size: $icon-size;
+            font-size: $interaction-icon-size;
             transition: all 120ms ease-in;
         }
         .SubText {
             text-transform: uppercase;
-            // font-size: $header-fontsize; 
             transition: all 120ms ease-in;
         }
         &:hover {
@@ -157,7 +147,7 @@ $tablet-size: 768px;
             & ._shopi,
             & .SubText {
                 cursor: pointer;
-                color: $hover-color;
+                color: $interaction-hover-color;
             }
         } 
     }
@@ -165,7 +155,7 @@ $tablet-size: 768px;
     .UserInteraction__auth {
         display: inline-block;
         i {
-            font-size: $icon-size; 
+            font-size: $interaction-icon-size; 
             transition: all 120ms ease-in
         }
         .SubText {
@@ -175,11 +165,11 @@ $tablet-size: 768px;
         &:hover {
             & i {
                 cursor: pointer;
-                color: $hover-color;
+                color: $interaction-hover-color;
             }
             & .SubText {
                 cursor: pointer;
-                color: $hover-color;
+                color:  $interaction-hover-color;
                 border-bottom: none
             }
         } 

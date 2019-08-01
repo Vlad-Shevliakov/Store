@@ -1,4 +1,4 @@
-$icon-color: #7cc576;
+@import '../../../../Variables.scss';
 
 .ContentItems {
     list-style: none;
@@ -12,18 +12,18 @@ $icon-color: #7cc576;
         text-decoration: none;
         font-size: 15px;
         display: flex;
-        color: #161616;
+        color: $drawer-content-item;
         i {
             position: relative;
             top: -3px;
             font-size: 22px;
-            color: $icon-color;
+            color: $drawer-icon-color;
             padding-right: 20px;
         }
         &:active {
-            color: #d4d4d4;
+            color: $drawer-active-link;
             i {
-                color: #d4d4d4;
+                color: $drawer-active-link;
             }
         }
     }

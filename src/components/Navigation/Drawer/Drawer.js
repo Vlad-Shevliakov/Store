@@ -16,8 +16,8 @@ const Drawer = (props) => {
         DrawerClasses.push(classes.show)
         OverlayClasses.push(classes.show)
     }
-    if (!props.show) body.style.overflow = 'auto'
 
+    if (!props.show) body.style.overflow = 'auto'
 
     return (
         <div>

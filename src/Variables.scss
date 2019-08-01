@@ -1,0 +1,59 @@
+// ..._h - hover
+// ..._a - active
+
+
+
+// ───── General variables ──────────────────────────────────────────────────
+
+// Sizes
+$desktop-size: 1200px;
+$tablet-size: 768px;
+
+
+// Colors
+$main-color: #5CDB95;
+$main-black: #343434;
+$scrollbar-bkg: #F5F5F5;
+$scrollbar-thumb: #5CDB95;
+$scrollbar-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+
+
+
+// ───── Components ────────────────────────────────────────────────────────
+
+
+
+// Drawer
+$drawer-top: #fff;
+$drawer-bottom: #fff;
+$drawer-icon-color: #7cc576;
+$drawer-active-link: #d4d4d4;
+$drawer-content-item: #161616;
+
+
+// Header
+$header-fontsize: 14px;
+$tablet-fontsize: 16px;
+$desktop-color-header: #fff;
+$navigation-link-color: #343434;
+//user interaction
+$interaction-icon-size: 14px;
+$interaction-hover-color: #7cc576;
+// item
+$navigation-link_h: #535353;
+$navigation-link_a: #7cc576;
+// cart preview
+$cart-visibility: none;
+// booking
+$booking-btn-bkg: #5CDB95;
+$booking-btn-color_h: rgb(93, 239, 159);
+$trash-bin-color: #b2b2b2;
+$trash-bin-color_h: #787878;
+$booking-preview-box: 80px; 
+// empty cart
+$empty-cart-title: #505050;
+$empty-cart-info: #777;
+
+
+// Footer
+$footer-back: rgb(61, 65, 69);

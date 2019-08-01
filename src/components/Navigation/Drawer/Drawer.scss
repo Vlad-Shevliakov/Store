@@ -1,8 +1,5 @@
-$main-text-color: #0d2744;
-$headerColor: #2ECC40;
+@import '../../../Variables.scss';
 
-$desktop-size: 1200px;
-$tablet-size: 768px;
 
 @mixin hide {
     position: absolute;
@@ -23,9 +20,8 @@ $tablet-size: 768px;
     z-index: 1000;
     width: 75%;
     max-width: 340px;
-    background-color: #fff;
+    background-color: $drawer-bottom;
     height: 100vh;
-    color: $main-text-color;
     transition: .3s;
 }
 
@@ -47,8 +43,7 @@ $tablet-size: 768px;
 
 .Drawer__top {
     position: relative;
-    background-color: $headerColor;
-    background-color: #fff;
+    background-color: $drawer-top;
     padding: 20px 15px; 
     border-bottom: 1px solid #dedede;
     button {
@@ -63,21 +58,6 @@ $tablet-size: 768px;
 .DrawerLogo {
     display: block;
     max-width: 162px;
-}
-
-
-.DrawerAuthLink {
-    text-decoration: none;
-    color: $main-text-color;
-    &:active {
-        color: #6b6969;
-    }
-    i {
-        font-size: 20px;
-    }
-    span {
-        padding-left: 10px;
-    }
 }
 
 

@@ -1,6 +1,4 @@
-$navigationLinkColor: #343434;
-$navigationLinkColor--hover: #535353;
-$navigationLinkColor--active: #7cc576;
+@import '../../../../../Variables.scss';
 
 
 .Link {
@@ -9,14 +7,14 @@ $navigationLinkColor--active: #7cc576;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 500;
-    color: $navigationLinkColor;
+    color: $navigation-link-color;
     &:hover {
-        color: $navigationLinkColor--hover;
+        color: $navigation-link_h;
     }
 }
 
 // главная навигация
 .Link.ActivePage {
-    color: $navigationLinkColor--active;
+    color: $navigation-link_a;
     border-radius: 20px;
 }

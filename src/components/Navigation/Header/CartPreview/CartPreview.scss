@@ -1,8 +1,4 @@
-$main-color: rgb(141, 194, 126);
-$main-black: #343434;
-
-$desktop-size: 1200px;
-$tablet-size: 768px;
+@import '../../../../Variables.scss';
 
 @keyframes show-cart {
     from {
@@ -18,7 +14,7 @@ $tablet-size: 768px;
 .container {
     position: absolute;
     z-index: 999;
-    display: none; ////////////
+    display: $cart-visibility;
     width: 400px;
     border-radius: 12px 0 12px 12px;
     left: 50%;
@@ -30,16 +26,9 @@ $tablet-size: 768px;
 }
 
 
-
 .CartPreview {
     
 }
-
-
-
-
-
-
 
 
 @media (min-width: $tablet-size) {

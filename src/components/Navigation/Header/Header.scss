@@ -1,17 +1,11 @@
-$header-fontsize: 14px;
-$tablet-fontsize: 16px;
-$headerColor: #5CDB95;
-$headerColor_desktop: #fff;
-
-$desktop-size: 1200px;
-$tablet-size: 768px;
+@import '../../../Variables.scss';
 
 
 .PageHeader {
     z-index: 998;
     padding: 14px 10px;
     font-size: $tablet-fontsize;
-    background-color: $headerColor;
+    background-color: $main-color;
     position: fixed;
     top: 0;
     right: 0;
@@ -29,7 +23,7 @@ $tablet-size: 768px;
 @media (min-width: $tablet-size) {
     .PageHeader {
         padding: 14px 60px 14px 20px;
-        background-color: $headerColor;
+        background-color: $main-color;
         box-shadow: 0px 5px 14.25px 0.75px rgba(36, 11, 12, 0.05);
     }
 }
@@ -38,7 +32,7 @@ $tablet-size: 768px;
     .PageHeader {
         position: static;
         padding: 10px 80px;
-        background-color: $headerColor_desktop;
+        background-color: $desktop-color-header;
         font-size: $header-fontsize;
         box-shadow: none;
     }

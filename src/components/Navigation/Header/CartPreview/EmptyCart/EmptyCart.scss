@@ -1,4 +1,4 @@
-$main-black: #505050;
+@import '../../../../../Variables.scss';
 
 
 .Empty {
@@ -9,7 +9,6 @@ $main-black: #505050;
         margin: 0 30px;
         float: left;
         // padding-right: 10px;
-
     }
     h3 {
         font: inherit;
@@ -17,13 +16,13 @@ $main-black: #505050;
         font-size: 28px;
         margin: 10px 0;
         line-height: 35px;
-        color: $main-black;
+        color: $empty-cart-title;
     }
     p {
         margin: 0;
         margin-top: 16px;
         font-size: 15px;
         text-align: center;
-        color: #777;
+        color: $empty-cart-info;
     }
 }
