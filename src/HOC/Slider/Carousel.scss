@@ -1,8 +1,4 @@
-$arrow-lr: 6px;
-$arrow-color: #f0ffff;
-
-$desktop-size: 1200px;
-$tablet-size: 768px;
+@import '../../Variables.scss';
 
 
 @mixin slider_arrow {
@@ -24,8 +20,6 @@ $tablet-size: 768px;
         background-color: rgba(0, 0, 0, .1);
     }
 }
-
-
 
 
 .control_prev {

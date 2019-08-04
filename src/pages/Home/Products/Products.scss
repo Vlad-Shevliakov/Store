@@ -1,17 +1,14 @@
-$main-color: #2ECC40;
-$main-black: #343434;
+@import '../../../Variables.scss';
 
-$desktop-size: 1200px;
-$tablet-size: 768px;
 
 .Title {
     font-family: inherit;
     font-weight: 400;
     margin-left: 10px;
-    font-size: 1.3em;
+    font-size: $star-title-size;
     color: $main-black;
     i {
-        color: $main-color;
+        color: $product-star-color;
         padding-right: 10px;
     }
 }
@@ -35,7 +32,7 @@ $tablet-size: 768px;
 }
 
 .ProductsSection {
-    max-width: 1300px;
+    max-width: $products-section-size;
     margin: 0 auto;
 }
 
@@ -65,4 +62,6 @@ $tablet-size: 768px;
     }
 }
 
-@media (min-width: $desktop-size) {}
+@media (min-width: $desktop-size) {
+    
+}

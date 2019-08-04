@@ -1,16 +1,10 @@
-$main-color: #2ECC40;
-$main-black: #343434;
+@import '../../../Variables.scss';
 
-$desktop-size: 1200px;
-$tablet-size: 768px;
-
-$arrow-lr: 6px;
-$arrow-color: #f0ffff;
 
 .SliderWrapper {
     margin: 0 auto;
-    max-width: 1450px;
-    max-height: 350px;
+    max-width: $mainslider-max-width;
+    max-height: $mainslider-max-height;
     height: 100%;
 	position: relative;
     overflow: hidden;
