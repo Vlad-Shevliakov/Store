@@ -31,6 +31,8 @@ const Cart = class extends Component {
 
     removeItemHandler = id => {
 
+        console.log('s')
+
         const orders = [...this.state.orders]
 
         const ind = orders.findIndex(el => el.code === id)
