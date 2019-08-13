@@ -1,50 +1,31 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import classes from './Cart.scss'
+import { connect } from 'react-redux'
+import * as cart from '../../redux/actions/cartAction'
 
 import Orders from './Orders/Orders'
 import Summary from './Summary/Summary'
 
-const Cart = class extends Component {
+const Cart = class extends PureComponent {
 
-    state = {
-        orders: [
-            {
-                title: 'Тестовый товар #1',
-                img: 'https://github.com/Vlad-Shevliakov/Store/blob/master/src/assets/rastr/test-bag_1.jpg?raw=true', // t
-                price: 2600,
-                code: '0001'
-            },
-            {
-                title: 'Тестовый товар #2',
-                img: 'https://github.com/Vlad-Shevliakov/Store/blob/master/src/assets/rastr/test-bag_1.jpg?raw=true', // t
-                price: 2600,
-                code: '0002'
-            },
-            {
-                title: 'Тестовый товар #3',
-                img: 'https://github.com/Vlad-Shevliakov/Store/blob/master/src/assets/rastr/test-bag_1.jpg?raw=true', // t
-                price: 2900,
-                code: '0003'
-            }
-        ]
+
+
+    componentDidMount() {
+        this.calculationOfTheAmount()
     }
 
-    removeItemHandler = id => {
-
-        console.log('s')
-
-        const orders = [...this.state.orders]
-
-        const ind = orders.findIndex(el => el.code === id)
-
-        orders.splice(ind, 1)
-
-        this.setState({
-            orders
-        })
-        
+    componentDidUpdate(prevProps, prevState) {
+        this.calculationOfTheAmount()
     }
 
+
+    calculationOfTheAmount = () => {
+        const amount = this.props.ordersList.reduce((count, order) => {
+            return count += order.price 
+        }, 0)
+        this.props.totalAmount(amount)
+    }
+    
 
     render() {
 
@@ -52,10 +33,12 @@ const Cart = class extends Component {
             <div className={classes.Cart}>                
                 <div className={classes.cart_container}>
                     <Orders
-                        orders={this.state.orders}
-                        removeHandler={this.removeItemHandler}
+                        orders={this.props.ordersList}
+                        removeHandler={this.props.removeOrder}
                     />
-                    <Summary />
+                    <Summary 
+                        totalSumm={this.props.totalSumm}
+                    />
                 </div>
             </div>
         )
@@ -64,4 +47,20 @@ const Cart = class extends Component {
 }
 
 
-export default Cart
+const mapStateToProps = store => {
+    return {
+        ordersList: store.cart.orders,
+        totalSumm: store.cart.amount
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        removeOrder: (code) => dispatch(cart.removeOrder(code)),
+        totalAmount: (amount) => dispatch(cart.priceCalculation(amount))
+    } 
+}
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart)

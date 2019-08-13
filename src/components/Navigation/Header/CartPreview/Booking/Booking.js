@@ -1,6 +1,5 @@
 import React from 'react'
 import classes from './Booking.scss'
-
 import { Link } from 'react-router-dom'
 
 // Это тест, только для вида!
@@ -10,7 +9,7 @@ import Bag from '../../../../../assets/rastr/test-bag_1.jpg'
 
 const Booking = props => {
 
-    const {cartItems} = props
+    const { cartItems, removeOrder } = props
 
     return (
         <div className={classes.container}>
@@ -30,11 +29,14 @@ const Booking = props => {
                                     </div>
                                     <div className={classes.otherData}>
                                         <h3 className={classes.prodTitle}>
-                                            <a href="#0">{product.name}</a>
+                                            <a href="#0">{product.title}</a>
                                         </h3>
                                         <span className={classes.Price} >{product.price} грн</span>
-                                        <div className={classes.Quantity}>
-                                            <strong>{product.amount} шт.</strong>
+                                        <div
+                                            className={classes.Quantity}
+                                            onClick={() => removeOrder(product.code)}
+                                        >
+                                            <strong>1 шт.</strong>
                                             <i className="fas fa-trash" />
                                         </div>
                                     </div>

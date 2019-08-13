@@ -5,16 +5,14 @@ import OrderItem from './OrderItem/OrderItem'
 
 const Orders = props => {
 
-
     const { 
         orders,
         removeHandler
     } = props
 
-
     return (
         <div className={classes.Orders}>
-            <h2 className={classes.title}>Ваши товары ({orders.length})</h2>
+            <h2 className={classes.title}>Ваши товары: ({orders.length})</h2>
             <ul className={classes.labels}>
                 <li className={classes._first}>
                     <span>Товар</span>

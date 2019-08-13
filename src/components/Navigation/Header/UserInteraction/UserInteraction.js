@@ -12,21 +12,7 @@ const UserInteraction = props => {
         event.preventDefault()
         console.log('BTN')
     }
-
     
-    const itemsList = []
-
-    // Это для теста!
-
-    for (let j = 0; j <= 10; j++) {
-        itemsList.push(
-            {
-                amount: Math.round(Math.random() * 5) + 1,
-                price: 999,
-                name:  "Some name some name"
-            }
-        )
-    }
 
     return (
         <ul className={classes.UserInteraction}>
@@ -66,9 +52,7 @@ const UserInteraction = props => {
                         <span className={classes.SubText}>Корзина</span>
                     </Link>
                     {/*  */}
-                    <CartPreview 
-                        cartItems={itemsList} 
-                    />
+                    <CartPreview />
                 </div>
                 <div className={classes.UserInteraction__auth}>
                     <Link

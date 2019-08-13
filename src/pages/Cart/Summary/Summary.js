@@ -5,7 +5,13 @@ const Summary = props => {
     return (
         <div className={classes.Summary}>
             <div className={classes.info_box}>
-                <h2 className={classes.title}>Вся сумма</h2>
+                <h2 className={classes.title}>
+                    Итого:
+                    <span>
+                        { props.totalSumm } грн.
+                    </span>
+
+                </h2>
             </div>
         </div>
     )

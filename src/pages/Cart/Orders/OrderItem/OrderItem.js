@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import classes from './OrderItem.scss'
 import Button from '../../../../components/UI/Button/Button'
 import { CSSTransition } from 'react-transition-group'
+import fadeTransition from './FadeTransition.scss'
 
 const OrderItem = props => {
 
@@ -10,31 +11,26 @@ const OrderItem = props => {
         image,
         price,
         code,
-        // isdeleted,
         removeHandler
     } = props
 
 
-    const [showItem, setShowItem] = useState(false)
+    const [deleteItem, setDeletedItem] = useState(false)
 
 
     const removeFunc = () => {
         removeHandler(code)
-        setShowItem(false)
+        setDeletedItem(false)
     }
 
     return (
         <li>
             <CSSTransition
-                in={showItem}
+                in={deleteItem}
                 timeout={401}
-                
-                
-                classNames={{...classes}}
-
-                // classNames='s'
+                classNames={fadeTransition}
+                // unmountOnExit
                 onEntered={removeFunc}
-                // onExit={() => console.log('exit')}
             >
                 <div className={classes.order_item}>
                     <div className={classes.group_one}>
@@ -71,7 +67,7 @@ const OrderItem = props => {
                     {/*  */}
                     <Button
                         classType='CartRemoveButton'
-                        func={() => setShowItem(true)}
+                        func={() => setDeletedItem(true)}
                     >
                         <i className="fa fa-trash" aria-hidden="true" />
                     </Button>
