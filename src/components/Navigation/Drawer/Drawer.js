@@ -1,33 +1,35 @@
 import React from 'react'
 import classes from './Drawer.scss'
-
+import cn from 'classnames'
 import Button from '../../UI/Button/Button'
-import Logo from '../../../assets/vector/logo.svg'
 import ContentItems from './ContentItems/ContentItems'
 
 
 const Drawer = (props) => {
     const body = document.querySelector('BODY')
-    const DrawerClasses = [classes.Drawer]
-    const OverlayClasses = [classes.Overlay]
+
+    const drawerClass = cn({
+        [classes.drawer]: true,
+        [classes.show]: props.show,
+    })
+
+    const overlayClass = cn({
+        [classes.overlay]: true,
+        [classes.show]: props.show,
+    })
 
     if (props.show) {
         body.style.overflow = 'hidden'
-        DrawerClasses.push(classes.show)
-        OverlayClasses.push(classes.show)
+        
+    } else {
+        body.style.overflow = 'auto'
     }
-
-    if (!props.show) body.style.overflow = 'auto'
 
     return (
         <div>
-            <aside className={DrawerClasses.join(' ')}>
-                <div className={classes.Drawer__top}>
-                    <img 
-                        src={Logo}
-                        alt='логотип магазина'
-                        className={classes.DrawerLogo}
-                    />
+            <aside className={drawerClass}>
+                <div className={classes.drawer__top}>
+                    <h3 className={classes.drawer_title}>Bagson</h3>
                     <Button 
                         func={props.switchFunc}
                         classType='ButtonHideDrawer'
@@ -41,7 +43,7 @@ const Drawer = (props) => {
             </aside>
             <div
                 onClick={props.switchFunc}
-                className={OverlayClasses.join(' ')}
+                className={overlayClass}
             />
         </div>
     )

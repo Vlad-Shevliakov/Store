@@ -3,7 +3,7 @@ import classes from './Top.scss'
 
 const Top = props => {
     return (
-        <div className={classes.Top}/>
+        <div className={classes.top}/>
     )
 }
 

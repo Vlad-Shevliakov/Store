@@ -14,7 +14,7 @@
     overflow: hidden;
 }
 
-.Drawer {
+.drawer {
     left: -75%;
     position: fixed;
     z-index: 1000;
@@ -25,15 +25,20 @@
     transition: .3s;
 }
 
-.Drawer.show {
+.drawer_title {
+    @include logo-gradient;
+    font-size: 45px;
+}
+
+.drawer.show {
     left: 0;
 }
 
-.Overlay {
+.overlay {
     display: none;
 }
 
-.Overlay.show {
+.overlay.show {
     display: block;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.5);
@@ -41,10 +46,10 @@
     z-index: 999;
 }
 
-.Drawer__top {
+.drawer__top {
     position: relative;
     background-color: $drawer-top;
-    padding: 20px 15px; 
+    padding: 22px 15px; 
     border-bottom: 1px solid #dedede;
     button {
         position: absolute;
@@ -63,7 +68,7 @@
 
 @media (max-width: 260px) {
 
-    .Drawer {
+    .drawer {
         width: 100%;
         left: -100%;
     }
@@ -75,11 +80,11 @@
 
 @media (min-width: $desktop-size) {
 
-    .Drawer {
+    .drawer {
         display: none;
     }
 
-    .Overlay {
+    .overlay {
         @include hide();
     }
 }

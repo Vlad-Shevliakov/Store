@@ -10,6 +10,8 @@ const Orders = props => {
         removeHandler
     } = props
 
+    console.log("render")
+
     return (
         <div className={classes.Orders}>
             <h2 className={classes.title}>Ваши товары: ({orders.length})</h2>

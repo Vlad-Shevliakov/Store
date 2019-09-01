@@ -27,7 +27,6 @@ $drawer-top: #fff;
 $drawer-bottom: #fff;
 $drawer-icon-color: #7cc576;
 $drawer-active-link: #d4d4d4;
-$drawer-content-item: #161616;
 
 
 // Header !
@@ -111,4 +110,15 @@ $arrow-color: #f0ffff;
     clip-path: inset(100%);
     clip: rect(0 0 0 0);
     overflow: hidden;
+}
+
+
+
+@mixin logo-gradient {
+    font: inherit;
+    font-size: 40px;
+    background: linear-gradient(to right, $main-color, #3ba9f4, #9fea63);
+    margin: 0;
+    -webkit-background-clip: text;
+    color: transparent;
 }

@@ -2,6 +2,13 @@ import React from 'react'
 import classes from './ContentItems.scss'
 import { Link } from 'react-router-dom'
 
+import home from '../../../../assets/ui-items/drawer/home.svg'
+import cart from '../../../../assets/ui-items/drawer/cart.svg'
+import user from '../../../../assets/ui-items/drawer/user.svg'
+import list from '../../../../assets/ui-items/drawer/list.svg'
+
+
+
 const ContentItems = props => {
 
     const { hideAfterClick } = props
@@ -9,25 +16,29 @@ const ContentItems = props => {
     const items = [
         {
             text: 'Главная',
-            facls: 'fa fa-home',
+            fasm: 'fa fa-home',
+            img: home,
             aria: true,
             to: '/'
         },
         {
             text: 'Личный кабинет',
-            facls: 'fa fa-user',
+            fasm: 'fa fa-user',
+            img: user,
             aria: true,
             to: '/profile'
         },
         {
             text: 'Каталог',
-            facls: 'fa fa-list',
+            fasm: 'fa fa-list',
+            img: list,
             aria: true,
             to: '/products'
         },
         {
             text: 'Корзина',
-            facls: 'fa fa-shopping-cart',
+            fasm: 'fa fa-shopping-cart',
+            img: cart,
             aria: true,
             to: '/cart'
         },
@@ -35,14 +46,17 @@ const ContentItems = props => {
     ]
 
     return (
-        <ul className={classes.ContentItems}>
+        <ul className={classes.content_tems}>
             {
                 items.map((item, ind) => {
                     return (
-                        <li className={classes.Content__item} key={ind}>
-                            <Link onClick={hideAfterClick} to={item.to}>
-                                <i className={item.facls} aria-hidden={item.aria} />
-                                {/* <span>{item.text}</span> */}
+                        <li key={ind}>
+                            <Link 
+                                to={item.to}
+                                onClick={hideAfterClick} 
+                                className={classes.content_item}
+                            >
+                                <i className={classes.upic} style={{backgroundImage: `url(${item.img})`}} />
                                 { item.text }
                             </Link>
                         </li>

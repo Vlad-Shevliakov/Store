@@ -7,16 +7,16 @@ const MainSlider = props => {
    
     const sliderList = [
         {
-            pic: "https://picsum.photos/id/20/1450/350",
-        },
-        {
             pic: "https://picsum.photos/id/1/1450/350",
         },
         {
-            pic: "https://picsum.photos/id/22/1450/350",
+            pic: "https://picsum.photos/id/2/1450/350",
         },
         {
-            pic: "https://picsum.photos/id/23/1450/350",
+            pic: "https://picsum.photos/id/3/1450/350",
+        },
+        {
+            pic: "https://picsum.photos/id/4/1450/350",
         }
     ]
 

@@ -6,7 +6,7 @@ import Bottom from './Bottom/Bottom'
 
 const Footer = props => {
     return (
-        <footer className={classes.Footer}>
+        <footer className={classes.footer}>
             <div className={classes.container}>
                 <Top />
                 <Bottom />

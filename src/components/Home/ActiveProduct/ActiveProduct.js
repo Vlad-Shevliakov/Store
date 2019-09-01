@@ -5,7 +5,7 @@ import classes from './ActiveProduct.scss'
 const ActiveProduct = props => {
     return (
         <div className={classes.container}>
-            <section className={classes.ActiveProduct}>
+            <section className={classes.activeProduct}>
 
             </section>
         </div>
