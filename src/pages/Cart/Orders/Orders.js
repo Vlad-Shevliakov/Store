@@ -24,7 +24,7 @@ const Orders = props => {
                 <li>Количество</li>
                 <li>Общая цена</li>
             </ul>
-            <TransitionGroup>
+            <TransitionGroup component="ul" className={classes.list}>
                 {
                     orders.map((order) => {
                         return (

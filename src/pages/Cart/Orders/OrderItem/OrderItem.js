@@ -18,7 +18,7 @@ const OrderItem = props => {
    }
 
     return (
-        <div className={classes.order_item}>
+        <li className={classes.order_item}>
             <div className={classes.group_one}>
                 <div className={classes.product_img}>
                     <img src={image} alt={title}/>
@@ -57,7 +57,7 @@ const OrderItem = props => {
             >
                 <i className="fa fa-trash" aria-hidden="true" />
             </Button>
-        </div>
+        </li>
     )
 }
 

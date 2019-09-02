@@ -1,7 +1,8 @@
 import React from 'react'
 import classes from './Booking.scss'
 import { Link } from 'react-router-dom'
-
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
+import booking from './BookingFade.scss'
 // Это тест, только для вида!
 import Bag from '../../../../../assets/rastr/test-bag_1.jpg'
 
@@ -13,11 +14,21 @@ const Booking = props => {
 
     return (
         <div className={classes.container}>
-            <ul className={classes.Booking}>
+            <TransitionGroup component={'ul'} className={classes.Booking}>
                 {
                     cartItems.map((product, ind) => {
                         return (
-                            <li key={ind}>
+                            <CSSTransition
+                                key={product.code}
+                                timeout={500}
+                                classNames={{
+                                    enter: booking["booking"],
+                                    enterActive: booking["booking-enter-active"],
+                                    exit: booking["booking-exit"],
+                                    exitActive: booking["booking-exit-active"]
+                                }}
+                            >
+                            <li>
                                 <div className={classes.Item}>
                                     <div className={classes.ImgBox}>
                                         <a href={`#${ind}`}>
@@ -42,10 +53,11 @@ const Booking = props => {
                                     </div>
                                 </div>
                             </li>
+                            </CSSTransition>
                         )
                     })
                 }
-            </ul>
+            </TransitionGroup>
             <div className={classes.btnbox}>
                 <Link
                     className={classes.CheckoutBtn}

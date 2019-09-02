@@ -1,20 +1,18 @@
-.cart {
+.booking {
     opacity: 0;
 }
 
-.cart-enter-active {
+.booking-enter-active {
     opacity: 1;
     transform: translateX(-200px);
     transition: all .3s ease-in;
 }
 
-.cart-exit {
+.booking-exit {
     opacity: 1;
-
-
 }
 
-.cart-exit-active {
+.booking-exit-active {
     opacity: 0;
     transform: translateX(-200px);
     transition: all .3s ease-in;
