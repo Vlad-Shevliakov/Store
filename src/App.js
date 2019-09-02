@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import './normalize.scss'
+// import './normalize.scss'
+import 'normalize.css'
+import './index.scss'
 import { Switch, Route } from 'react-router-dom'
 import Layout from './HOC/Layout/Layout'
 

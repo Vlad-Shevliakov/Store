@@ -1,16 +1,17 @@
 import React from 'react'
 import classes from './Orders.scss'
-
+import { TransitionGroup, CSSTransition} from 'react-transition-group'
 import OrderItem from './OrderItem/OrderItem'
+import cart from './FadeTransition.scss'
+
 
 const Orders = props => {
-
+    // все из CartPreview.js
     const { 
         orders,
         removeHandler
     } = props
 
-    console.log("render")
 
     return (
         <div className={classes.Orders}>
@@ -23,22 +24,33 @@ const Orders = props => {
                 <li>Количество</li>
                 <li>Общая цена</li>
             </ul>
-            <ul className={classes.list}>
+            <TransitionGroup>
                 {
-                    orders.map((order, ind) => {
+                    orders.map((order) => {
                         return (
-                            <OrderItem
-                                key={ind}
-                                title={order.title}
-                                image={order.img}
-                                code={order.code}
-                                price={order.price}
-                                removeHandler={removeHandler}
-                            />
+                            <CSSTransition
+                                key={order.code}
+                                timeout={500}
+                                classNames={{
+                                    enter: cart["cart"],
+                                    enterActive: cart["cart-enter-active"],
+                                    exit: cart["cart-exit"],
+                                    exitActive: cart["cart-exit-active"]
+                                }}
+                            >
+                                <OrderItem
+                                    key={order.code}
+                                    title={order.title}
+                                    image={order.img}
+                                    code={order.code}
+                                    price={order.price}
+                                    removeHandler={removeHandler}
+                                />
+                            </CSSTransition>
                         )
                     })
                 }
-            </ul>
+            </TransitionGroup>
         </div>
     )
 

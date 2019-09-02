@@ -1,22 +1,21 @@
-@import '../../../../Variables.scss';
 
-.enter {
+.cart {
     opacity: 0;
 }
 
-.enterActive {
+.cart-enter-active {
     opacity: 1;
     transform: translateX(-200px);
     transition: all .3s ease-in;
 }
 
-.exit {
+.cart-exit {
     opacity: 1;
 
 
 }
 
-.exitActive {
+.cart-exit-active {
     opacity: 0;
     transform: translateX(-200px);
     transition: all .3s ease-in;
