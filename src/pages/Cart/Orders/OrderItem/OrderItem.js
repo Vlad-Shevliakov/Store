@@ -19,38 +19,26 @@ const OrderItem = props => {
 
     return (
         <li className={classes.order_item}>
-            <div className={classes.group_one}>
-                <div className={classes.product_img}>
-                    <img src={image} alt={title}/>
-                </div>
-
-                <div className={classes.product_details}>
-                    <p>
-                        <strong className={classes.quantity}>
-                            1 шт.&nbsp;
-                        </strong>
-                        <span>
-                            {title}
-                        </span>
-                    </p>
-                    <p className={classes.product_code}>
-                        code: {code}
-                    </p>
-                </div>
+            <div className={classes.product_img}>
+                <img src={image} alt={title}/>
             </div>
 
-            <ul className={classes.group_two}>
-                <li className={classes.price}>
-                    {price} грн.
+            <p>{title}</p>
+            <ul className={classes.price_c_list} >
+                <li className={classes.order_controls}>
+                    <Button classType='numControl_l' />
+                    <input 
+                        type="number"
+                        value="1"
+                        className={classes.order_inp}
+                    />
+                    <Button classType='numControl_r' />
                 </li>
-                <li className={classes.product_quantity}>
-                    <input type="number" onChange={() => console.log('change')} value="1"/>
-                </li>
-                <li className={classes.subtotal}>
-                    <span>120 {'грн'}</span>
+                <li className={classes.product_price}>
+                    <strong className={classes.price}>{price}</strong>
+                    <span className={classes.currency}>грн</span>
                 </li>
             </ul>
-            {/*  */}
             <Button
                 classType='CartRemoveButton'
                 func={removeFunc}

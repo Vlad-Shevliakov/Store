@@ -1,55 +1,15 @@
 import React from 'react';
 import classes from './Products.scss'
-
+import { connect } from 'react-redux'
 import ProductUnit from './ProductUnit/ProductUnit'
-import p1 from '../../../assets/rastr/test-bag_1.jpg'
-import p2 from '../../../assets/rastr/test-bag_2.jpg'
+
+
 
 
 const Products = props => {
 
-    const products = [
-        {
-            image: p1,
-            title: 'Cotton Green Underwear Black Out Edition',
-            price: 2000
-        },
-        {
-            image: p2,
-            title: 'Cotton Purple Underwear',
-            price: 1700
-        },
-        {
-            image: p1,
-            title: 'Cotton Green Underwear Black Out Edition',
-            price: 2000
-        },
-        {
-            image: p2,
-            title: 'Cotton Purple Underwear',
-            price: 1700
-        },
-        {
-            image: p1,
-            title: 'Cotton Green Underwear Black Out Edition',
-            price: 2000
-        },
-        {
-            image: p2,
-            title: 'Cotton Green Underwear Black Out Edition',
-            price: 1700
-        },
-        {
-            image: p1,
-            title: 'Cotton Green Underwear Black Out Edition',
-            price: 2000
-        },
-        {
-            image: p1,
-            title: 'Cotton Green Underwear Black Out Edition',
-            price: 2000
-        }
-    ]
+   
+
 
     return (
         <section className={classes.ProductsSection}>
@@ -62,13 +22,14 @@ const Products = props => {
             <div className={classes.ProductsWrapper}>
                 <ul className={classes.Products_list}>
                     {
-                        products.map((el, ind) => {
+                        props.popular.map((el, ind) => {
                             return (
                                 <ProductUnit
                                     key={ind}
-                                    image={el.image}
+                                    image={el.img}
                                     title={el.title}
                                     price={el.price}
+                                    wholeItem={{...el}}
                                 />
                             )
                         })
@@ -79,4 +40,10 @@ const Products = props => {
     )
 }
 
-export default Products
+const mapStateToProps = store => {
+    return {
+        popular: store.home.popular,
+    }
+}
+
+export default connect(mapStateToProps)(Products)

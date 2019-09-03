@@ -1,20 +1,23 @@
 import React, { useState } from 'react'
 import classes from './ProductUnit.scss'
 import Button from '../../../../components/UI/Button/Button'
-
-
+import * as cart from '../../../../redux/actions/cartAction'
+import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 const ProductUnit = props => {
-
+    
     const [liked, changeLike] = useState(false)
 
+    const { image, price, title, wholeItem } = props
+    
     const shareFunc = () => {
         console.log('[Share]')
     }
 
     const addToCartHandler = () => {
-        console.log('[Cart]')
+        
+        props.addItem(wholeItem)
     }
 
     const likeHandler = () => {
@@ -22,7 +25,6 @@ const ProductUnit = props => {
     }
 
 
-    const { image, price, title } = props
 
     return (
         <li className={classes.ProductUnit}>
@@ -73,4 +75,10 @@ const ProductUnit = props => {
     )
 }
 
-export default ProductUnit
+const mapDispatchToProps = dispatch => {
+    return {
+        addItem: (item) => dispatch(cart.addOrder(item))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(ProductUnit)

@@ -9,6 +9,14 @@ export const removeOrder = (code) => {
 }
 
 
+export const addOrder = (order) => {
+    return {
+        type: AT.ADD_PRODUCT_TO_CART,
+        payload: order
+    }
+}
+
+
 export const priceCalculation = amount => {
     console.log(amount)
     return {

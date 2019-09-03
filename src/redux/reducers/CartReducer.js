@@ -3,38 +3,18 @@ import nid from 'nanoid'
 
 const initialState = {
     amount: 0,
-    orders: [
-        {
-            title: 'Тестовый товар #1',
-            img: 'https://github.com/Vlad-Shevliakov/Store/blob/master/src/assets/rastr/test-bag_1.jpg?raw=true', // t
-            price: 2600,
-            code: nid(10)
-        },
-        {
-            title: 'Тестовый товар #2',
-            img: 'https://github.com/Vlad-Shevliakov/Store/blob/master/src/assets/rastr/test-bag_1.jpg?raw=true', // t
-            price: 2600,
-            code: nid(10)
-        },
-        {
-            title: 'Тестовый товар #3',
-            img: 'https://github.com/Vlad-Shevliakov/Store/blob/master/src/assets/rastr/test-bag_1.jpg?raw=true', // t
-            price: 2900,
-            code: nid(10)
-        },
-        {
-            title: 'Тестовый товар #4',
-            img: 'https://github.com/Vlad-Shevliakov/Store/blob/master/src/assets/rastr/test-bag_1.jpg?raw=true', // t
-            price: 2200,
-            code: nid(10)
-        },
-        {
-            title: 'Тестовый товар #5',
-            img: 'https://github.com/Vlad-Shevliakov/Store/blob/master/src/assets/rastr/test-bag_1.jpg?raw=true', // t
-            price: 2290,
-            code: nid(10)
-        }
-    ]
+    orders: [{
+        title: 'Cotton Out Edition',
+        img: 'https://github.com/Vlad-Shevliakov/Store/blob/master/src/assets/rastr/test-bag_1.jpg?raw=true', // t
+        price: 1290,
+        code: nid(10)
+    },
+    {
+        title: 'Out Biz Edition',
+        img: 'https://github.com/Vlad-Shevliakov/Store/blob/master/src/assets/rastr/test-bag_1.jpg?raw=true', // t
+        price: 2292,
+        code: nid(10)
+    },]
 }
 
 export default (state = initialState, action) => {
@@ -47,7 +27,14 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 orders: arr
-            } 
+            }
+        case AT.ADD_PRODUCT_TO_CART:
+            const arrWithNewOrder = [...state.orders, {...action.payload}]
+            return {
+                ...state,
+                orders: arrWithNewOrder
+            }    
+        
         case AT.CART_PRICE_CALCULATION:
             return {
                 ...state,
