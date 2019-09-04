@@ -3,39 +3,85 @@
 
 .order_item {
     position: relative;
+    // height: 300px;
     // display: flex;
-    // margin-bottom: 8px;
-    // box-sizing: border-box;
-    // position: relative;
-    // padding: 14px 8px 10px 8px;
+    box-sizing: border-box;
+    padding: 14px 8px 10px 8px;
     border-bottom: 1px solid rgb(218, 218, 218);
-    // border: 1px solid #000;
 }
 
+.first_group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.info_list {
+    flex-basis: 30%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin: 15px 0;
+    flex-grow: 1; ///////
+    text-align: center;
+}
+
+.title {
+    a {
+        display: block;
+        text-decoration: none;
+        font-size: 18px;
+        color: #3970a1;
+        margin-bottom: 7px;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.order_code {
+    color: #86939E;
+    font-size: 14px;
+    margin-bottom: 7px;
+}
+
+.img_wrp {
+    flex-basis: 20%;
+    // flex-grow: 1;
+}
 
 .product_img {
-    width: 110px;
-    height: 126px;
-    // margin: 0 20px 0 0; 
+    width: 120px;
+    height: 160px;
+    // margin-right: 15px;
+    height: auto;
+    // margin: 0 auto;
+    // float: left;
+    margin: 0 auto;
     img {
         display: block;
-        max-width: 100%;
-        max-height: 100%;
+        width: 100%;
+        height: 100%;
     }
 }
 
 .price_c_list {
+    flex-basis: 50%;
+    flex-grow: 1;
     margin: 0;
     padding: 0;
     list-style: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .order_controls {
     display: flex;
     border: 1px solid #dedede;
     width: 120px;
-    border-radius: 6px;
-    margin: 20px 0;
+    border-radius: 7px;
+    margin: 10px 15px 10px 0;
 }
 
 .order_inp {
@@ -58,9 +104,9 @@
 
 .product_price {
     .price {
-        font-size: 18px;
+        font-size: 22px;
         color: $main-black;
-        font-weight: 500;
+        font-weight: 700;
     }
     .currency {
         margin-left: 4px;
@@ -74,8 +120,9 @@
 
 @media (min-width: $tablet-size) {
     
-    
-
+    .info_list {
+        text-align: start;
+    }
 }
 
 @media (min-width: $desktop-size) {
@@ -83,10 +130,6 @@
     .product_img {
         width: 120px;
         height: 160px;
-        img {
-            max-width: 100%;
-            max-height: 100%;
-        }
     }
 
 }
