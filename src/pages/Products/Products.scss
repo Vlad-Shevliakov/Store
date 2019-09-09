@@ -1,0 +1,15 @@
+@import '../../Variables.scss';
+
+.wrapper {
+    background: $products-wrapper;
+    padding: 1px;
+}
+
+.products {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: $products-page-size;
+    margin: 0 auto;
+    margin-top: 10px;
+}

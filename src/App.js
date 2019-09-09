@@ -1,42 +1,29 @@
-import React, { Component } from 'react'
-// import './normalize.scss'
+import React, { Component, lazy, Suspense } from 'react'
 import 'normalize.css'
 import './index.scss'
 import { Switch, Route } from 'react-router-dom'
 import Layout from './HOC/Layout/Layout'
+import Loader from './components/UI/Loader/Loader'
 
-import Home from './pages/Home/Home'
-import Cart from './pages/Cart/Cart'
-import Profile from './pages/Profile/Profile'
-
-// тест
-const Products = () => (
-    <h1 style={{
-        top: '70px',
-        left: '50%',
-        textAlign: 'center'
-    }}>Товары</h1>
-)
-const About = () => (
-    <h1 style={{
-        top: '70px',
-        left: '50%',
-        textAlign: 'center'
-    }}>О нас</h1>
-)
+const Home = lazy(() => import('./pages/Home/Home'))
+const Cart = lazy(() => import('./pages/Cart/Cart'))
+const Profile = lazy(() => import('./pages/Profile/Profile'))
+const Products = lazy(() => import('./pages/Products/Products'))
 
 
 class App extends Component {
     render() {
         return (
             <Layout>
-                <Switch>
-                    <Route path={'/'} exact component={Home} />
-                    <Route path={'/products'} component={Products} />
-                    <Route path={'/about'} component={About} />
-                    <Route path={'/cart'} component={Cart} />
-                    <Route path={'/profile'} component={Profile} />
-                </Switch>
+                <Suspense fallback={<Loader/>} >
+                    <Switch>
+                        <Route path={'/'} exact component={Home} />
+                        <Route path={'/products'} component={Products} />
+                        <Route path={'/about'} component={Loader} />
+                        <Route path={'/cart'} component={Cart} />
+                        <Route path={'/profile'} component={Profile} />
+                    </Switch>
+                </Suspense>
             </Layout>
         )
     }

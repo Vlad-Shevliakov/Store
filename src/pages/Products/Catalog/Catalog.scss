@@ -1,0 +1,7 @@
+@import '../../../Variables.scss';
+
+.catalog {
+    background: rgb(255, 255, 255);
+    width: calc(100% - 288px);
+    box-shadow: $products-shadow;
+}

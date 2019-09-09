@@ -116,6 +116,13 @@
 }
 
 
+@media(max-width: 260px) {
+
+    .img_wrp {
+        flex-grow: 1;
+    }
+
+}
 
 
 @media (min-width: $tablet-size) {

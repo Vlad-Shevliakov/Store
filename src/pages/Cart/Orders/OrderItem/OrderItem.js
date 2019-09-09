@@ -77,21 +77,6 @@ const OrderItem = props => {
                     </li>
                 </ul>
             </div>
-            {/* <ul className={classes.price_c_list} >
-                <li className={classes.order_controls}>
-                    <Button classType='numControl_l' />
-                    <input 
-                        type="number"
-                        value="1"
-                        className={classes.order_inp}
-                    />
-                    <Button classType='numControl_r' />
-                </li>
-                <li className={classes.product_price}>
-                    <strong className={classes.price}>{price}</strong>
-                    <span className={classes.currency}>грн</span>
-                </li>
-            </ul> */}
             <Button
                 classType='CartRemoveButton'
                 func={removeFunc}
