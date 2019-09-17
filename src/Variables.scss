@@ -7,7 +7,7 @@
 
 
 // Sizes
-$products-page-size: 1300px;
+$products-page-size: 1500px;
 $desktop-size: 1200px;
 $tablet-size: 768px;
 
@@ -101,6 +101,21 @@ $products-shadow: 0 1px 2px rgba(0,0,0,.3);
 // Slider
 $arrow-lr: 6px;
 $arrow-color: #f0ffff;
+
+
+
+@mixin hide {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    bottom: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
 
 
 @mixin visually-hidden {

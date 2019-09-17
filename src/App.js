@@ -18,7 +18,7 @@ class App extends Component {
                 <Suspense fallback={<Loader/>} >
                     <Switch>
                         <Route path={'/'} exact component={Home} />
-                        <Route path={'/products'} component={Products} />
+                        <Route path={'/catalog'} component={Products} />
                         <Route path={'/about'} component={Loader} />
                         <Route path={'/cart'} component={Cart} />
                         <Route path={'/profile'} component={Profile} />

@@ -1,14 +1,66 @@
 @import '../../../../Variables.scss';
 
+.par {
+    font-weight: 500;
+    font-size: 20px;
+    color: $main-black;
+}
+
 .producer_list {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.producer {
+.filter_item {
+    margin-bottom: 25px;
+    label {
+        position: relative;
+        padding-left: 45px;
+        cursor: pointer;
+    }
     
-    input {
-        margin-right: 10px;
+}
+
+.root_input {
+    @include hide();
+}
+
+// крафтовый чекбокс
+.checkbox_indicator {
+    position: absolute;
+    top: -6px;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #bea5a5;
+    border-radius: 4px;
+}
+
+.root_input:checked + .checkbox_indicator {
+    background: $main-color;
+    border-color: #000;
+    transition: all .3s;
+    // это галочка!
+    &::before {
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: 6px;
+        width: 10px;
+        height: 4px;
+        background: #fff;
+        transform: rotate(40deg);
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        top: 14px;
+        left: 11px;
+        width: 15px;
+        height: 4px;
+        background-color: #fff;
+        transform: rotate(-45deg);
     }
 }
+

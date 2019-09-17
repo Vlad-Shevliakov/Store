@@ -10,7 +10,7 @@ const Layout = props => {
 
     const links = [
         { text: 'Главная', to: '/', exact: true },
-        { text: 'Товары', to: '/products', exact: false },
+        { text: 'Каталог', to: '/catalog', exact: false },
         { text: 'О нас', to: '/about', exact: false },
     ]
 
