@@ -1,0 +1,132 @@
+@import '../../Variables.scss';
+
+
+.catalog {
+    max-width: $catalog-section-size;
+    margin: 0 auto;
+    height: 100vh; // ###
+}
+
+
+.title {
+    font-family: inherit;
+    font-weight: 400;
+    margin-left: 10px;
+    font-size: $catalog-title-size;
+    color: $main-black;
+    margin: 40px 0 30px 20px;
+}
+
+.catalog_list {
+    margin: 0;
+    padding: 0;
+    padding: 1px;
+    list-style: none;
+    display: flex; // ###
+    flex-wrap: wrap;
+}
+
+.catalog_item {
+    margin-top: 10px;
+    padding-top: 25px;
+    flex-basis: 50%;
+    box-sizing: border-box;
+    position: relative;
+    border-right: 1px solid $border_color-m;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .catalog_img {
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    .sub {
+        text-align: center;
+        color: #407cb0;
+        font-size: 20px;
+        &:hover {
+            color: blue;
+        }
+    }
+
+    &:hover {
+        border-right: 1px solid transparent;
+        & .container {
+           opacity: 1;
+        }
+    }
+    height: 300px;
+
+}
+
+.catalog_list li:nth-child(4n+2) {
+    border: transparent; 
+}
+
+.catalog_list li:last-child {
+    border: transparent; 
+}
+
+.container {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    transition: all .4s;
+    .hover_box {
+        color: #fff;
+        flex-grow: 1;
+        text-align: center;
+        top: 50%;
+        right: 50px;
+        left: 50px;
+        transform: translateY(-50%);
+
+        span {
+            font-size: 22px;
+            display: block;
+            margin: 20px 0 10px 0;
+        }
+
+        a {
+            display: block;
+            cursor: pointer;
+            color: #fff;
+            font-size: 19px;
+            text-decoration: none;
+            border: 1px solid #fff;
+            border-radius: 10px;
+            padding: 6px 0;
+            width: 100%;
+            max-width: 200px;
+            margin: 0 auto;
+            transition: all .4s;
+            &:hover {
+                background-color: #fff;
+                color: $main-black;
+                border-radius: 13px;
+            }
+        }
+    }
+}
+
+@media (min-width: $desktop-size) {
+    
+    .catalog_item {
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            z-index: 10;
+            box-shadow: 0px 5px 19px 1px rgba(36, 11, 12, 0.1);
+        }
+    }
+}
+

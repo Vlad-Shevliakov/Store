@@ -8,7 +8,8 @@ import Loader from './components/UI/Loader/Loader'
 const Home = lazy(() => import('./pages/Home/Home'))
 const Cart = lazy(() => import('./pages/Cart/Cart'))
 const Profile = lazy(() => import('./pages/Profile/Profile'))
-const Products = lazy(() => import('./pages/Products/Products'))
+const Catalog = lazy(() => import('./pages/Catalog/Catalog'))
+const Products = lazy(() => import('./pages/Products/Products')) // на время
 
 
 class App extends Component {
@@ -18,7 +19,8 @@ class App extends Component {
                 <Suspense fallback={<Loader/>} >
                     <Switch>
                         <Route path={'/'} exact component={Home} />
-                        <Route path={'/catalog'} component={Products} />
+                        <Route path={'/catalog'} component={Catalog} />
+                        <Route path={'/products'} component={Products} />
                         <Route path={'/about'} component={Loader} />
                         <Route path={'/cart'} component={Cart} />
                         <Route path={'/profile'} component={Profile} />

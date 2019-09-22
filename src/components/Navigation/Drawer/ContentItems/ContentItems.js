@@ -33,7 +33,7 @@ const ContentItems = props => {
             fasm: 'fa fa-list',
             img: list,
             aria: true,
-            to: '/products'
+            to: '/catalog'
         },
         {
             text: 'Корзина',

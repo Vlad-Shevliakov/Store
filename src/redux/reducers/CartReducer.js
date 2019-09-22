@@ -1,20 +1,21 @@
 import * as AT from '../actionType'
-import nid from 'nanoid'
+// import nid from 'nanoid'
 
 const initialState = {
     amount: 0,
-    orders: [{
-        title: 'Cotton Out Edition',
-        img: 'https://github.com/Vlad-Shevliakov/Store/blob/master/src/assets/rastr/test-bag_1.jpg?raw=true', // t
-        price: 1290,
-        code: nid(10)
-    },
-    {
-        title: 'Out Biz Edition',
-        img: 'https://github.com/Vlad-Shevliakov/Store/blob/master/src/assets/rastr/test-bag_1.jpg?raw=true', // t
-        price: 2292,
-        code: nid(10)
-    },]
+    orders: []
+    // orders: [{
+    //     title: 'Cotton Out Edition',
+    //     img: 'https://github.com/Vlad-Shevliakov/Store/blob/master/src/assets/rastr/test-bag_1.jpg?raw=true', // t
+    //     price: 1290,
+    //     code: nid(10)
+    // },
+    // {
+    //     title: 'Out Biz Edition',
+    //     img: 'https://github.com/Vlad-Shevliakov/Store/blob/master/src/assets/rastr/test-bag_1.jpg?raw=true', // t
+    //     price: 2292,
+    //     code: nid(10)
+    // },]
 }
 
 export default (state = initialState, action) => {

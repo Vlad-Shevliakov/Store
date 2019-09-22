@@ -1,7 +1,7 @@
 @import '../../../Variables.scss';
 
 
-.Title {
+.title {
     font-family: inherit;
     font-weight: 400;
     margin-left: 10px;
@@ -21,7 +21,7 @@
         position: absolute;
         max-width: 350px;
         width: 60%;
-        height: 1px;
+        // height: 1px;
         left: 50%;
         transform: translateX(-50%);
         bottom: -4px;

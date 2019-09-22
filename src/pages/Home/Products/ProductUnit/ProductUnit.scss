@@ -116,6 +116,7 @@
     
     .ProductUnit {
         flex-basis: 25%;
+        max-width: 325px;
         transition: all 0.3s ease-in-out;
         border-right: 1px solid $border_color-d;
         &:hover {

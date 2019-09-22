@@ -3,7 +3,7 @@ import classes from './Drawer.scss'
 import cn from 'classnames'
 import Button from '../../UI/Button/Button'
 import ContentItems from './ContentItems/ContentItems'
-
+import { Link } from 'react-router-dom'
 
 const Drawer = (props) => {
     const body = document.querySelector('BODY')
@@ -29,7 +29,15 @@ const Drawer = (props) => {
         <div>
             <aside className={drawerClass}>
                 <div className={classes.drawer__top}>
-                    <h3 className={classes.drawer_title}>Bagson</h3>
+                    <p>
+                        <Link 
+                            to="/"
+                            onClick={props.switchFunc} 
+                            className={classes.drawer_title}
+                        >
+                            Bagson
+                        </Link>
+                    </p>
                     <Button 
                         func={props.switchFunc}
                         classType='ButtonHideDrawer'
