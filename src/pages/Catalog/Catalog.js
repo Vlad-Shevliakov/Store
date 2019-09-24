@@ -1,19 +1,21 @@
-import React from 'react'
-import classes from './Catalog.scss'
+import React from "react"
+import classes from "./Catalog.scss"
 
-import chimg from '../../assets/vector/suitcase.svg'
-import purse from '../../assets/vector/purse.svg'
-import backpack from '../../assets/vector/backpack.svg'
-import handBag from '../../assets/vector/hand-bag.svg'
+import chimg from "../../assets/vector/suitcase.svg"
+import purse from "../../assets/vector/purse.svg"
+import backpack from "../../assets/vector/backpack.svg"
+import handBag from "../../assets/vector/hand-bag.svg"
 
 const Catalog = props => {
     return (
         <section className={classes.catalog}>
-            <h1 className={classes.title}>Выберите нужную вам категорию товара</h1>
+            <h1 className={classes.title}>
+                Выберите нужную вам категорию товара
+            </h1>
             <ul className={classes.catalog_list}>
                 <li className={classes.catalog_item}>
                     <div className={classes.catalog_img}>
-                        <img src={chimg} alt="Чемоданы"/>
+                        <img src={chimg} alt="Чемоданы" />
                     </div>
                     <div className={classes.container}>
                         <div className={classes.hover_box}>
@@ -25,7 +27,7 @@ const Catalog = props => {
                 </li>
                 <li className={classes.catalog_item}>
                     <div className={classes.catalog_img}>
-                        <img src={handBag} alt="Сумки"/>
+                        <img src={handBag} alt="Сумки" />
                     </div>
                     <div className={classes.container}>
                         <div className={classes.hover_box}>
@@ -37,7 +39,7 @@ const Catalog = props => {
                 </li>
                 <li className={classes.catalog_item}>
                     <div className={classes.catalog_img}>
-                        <img src={purse} alt="Кошельки"/>
+                        <img src={purse} alt="Кошельки" />
                     </div>
                     <div className={classes.container}>
                         <div className={classes.hover_box}>
@@ -49,7 +51,7 @@ const Catalog = props => {
                 </li>
                 <li className={classes.catalog_item}>
                     <div className={classes.catalog_img}>
-                        <img src={backpack} alt="Рюкзаки"/>
+                        <img src={backpack} alt="Рюкзаки" />
                     </div>
                     <div className={classes.container}>
                         <div className={classes.hover_box}>

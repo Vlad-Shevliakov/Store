@@ -1,5 +1,5 @@
-import React from 'react'
-import classes from './Summary.scss'
+import React from "react"
+import classes from "./Summary.scss"
 
 const Summary = props => {
     return (
@@ -7,10 +7,7 @@ const Summary = props => {
             <div className={classes.info_box}>
                 <h2 className={classes.title}>
                     Итого:
-                    <span>
-                        { props.totalSumm } грн.
-                    </span>
-
+                    <span>{props.totalSumm} грн.</span>
                 </h2>
             </div>
         </div>

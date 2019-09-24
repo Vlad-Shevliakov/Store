@@ -1,5 +1,4 @@
-import * as AT from '../actionType'
-
+import * as AT from "../actionType"
 
 export const switchDrawer = () => {
     return {

@@ -1,16 +1,9 @@
-import React from 'react';
-import classes from './Products.scss'
-import { connect } from 'react-redux'
-import ProductUnit from './ProductUnit/ProductUnit'
-
-
-
+import React from "react"
+import classes from "./Products.scss"
+import {connect} from "react-redux"
+import ProductUnit from "./ProductUnit/ProductUnit"
 
 const Products = props => {
-
-   
-
-
     return (
         <section className={classes.ProductsSection}>
             <div className={classes.title_wrapper}>
@@ -21,19 +14,17 @@ const Products = props => {
             </div>
             <div className={classes.ProductsWrapper}>
                 <ul className={classes.Products_list}>
-                    {
-                        props.popular.map((el, ind) => {
-                            return (
-                                <ProductUnit
-                                    key={ind}
-                                    image={el.img}
-                                    title={el.title}
-                                    price={el.price}
-                                    wholeItem={{...el}}
-                                />
-                            )
-                        })
-                    }
+                    {props.popular.map((el, ind) => {
+                        return (
+                            <ProductUnit
+                                key={ind}
+                                image={el.img}
+                                title={el.title}
+                                price={el.price}
+                                wholeItem={{...el}}
+                            />
+                        )
+                    })}
                 </ul>
             </div>
         </section>
@@ -42,7 +33,7 @@ const Products = props => {
 
 const mapStateToProps = store => {
     return {
-        popular: store.home.popular,
+        popular: store.home.popular
     }
 }
 

@@ -1,8 +1,7 @@
-import React from 'react'
-import classes from './Button.scss'
+import React from "react"
+import classes from "./Button.scss"
 
-
-const Button = (props) => {
+const Button = props => {
     return (
         <button
             className={classes[props.classType]}
@@ -10,7 +9,7 @@ const Button = (props) => {
             disabled={props.disabled}
             type={props.type}
         >
-            { props.children }
+            {props.children}
         </button>
     )
 }

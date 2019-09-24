@@ -1,8 +1,7 @@
-import React from 'react'
-import classes from './Input.scss'
+import React from "react"
+import classes from "./Input.scss"
 
-const Input = (props) => {
-
+const Input = props => {
     return (
         <input
             className={classes[props.classType]}

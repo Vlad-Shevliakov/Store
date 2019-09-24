@@ -1,8 +1,8 @@
-import React from 'react'
-import classes from './Footer.scss'
+import React from "react"
+import classes from "./Footer.scss"
 
-import Top from './Top/Top'
-import Bottom from './Bottom/Bottom'
+import Top from "./Top/Top"
+import Bottom from "./Bottom/Bottom"
 
 const Footer = props => {
     return (

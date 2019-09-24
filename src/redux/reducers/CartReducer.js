@@ -1,4 +1,4 @@
-import * as AT from '../actionType'
+import * as AT from "../actionType"
 // import nid from 'nanoid'
 
 const initialState = {
@@ -21,9 +21,10 @@ const initialState = {
 export default (state = initialState, action) => {
     switch (action.type) {
         case AT.REMOVE_ITEM_FROM_CART:
-
             // Новый массив заменит старый, без удаленного элемента
-            const arr = state.orders.filter(order => order.code !== action.payload)
+            const arr = state.orders.filter(
+                order => order.code !== action.payload
+            )
 
             return {
                 ...state,
@@ -34,13 +35,13 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 orders: arrWithNewOrder
-            }    
-        
+            }
+
         case AT.CART_PRICE_CALCULATION:
             return {
                 ...state,
                 amount: action.payload
-            }    
+            }
         default:
             return state
     }

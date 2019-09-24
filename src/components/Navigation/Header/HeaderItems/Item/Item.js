@@ -1,10 +1,9 @@
-import React from 'react'
-import classes from './Item.scss'
-import { NavLink } from 'react-router-dom'
+import React from "react"
+import classes from "./Item.scss"
+import {NavLink} from "react-router-dom"
 
-
-const Item = (props) => {
-    const { text, path, currentClass, isExact } = props
+const Item = props => {
+    const {text, path, currentClass, isExact} = props
     return (
         <li className={classes.Item}>
             <NavLink

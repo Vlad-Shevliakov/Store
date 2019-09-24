@@ -1,11 +1,7 @@
-import React from 'react'
-import classes from './ListOfProducers.scss'
-
+import React from "react"
+import classes from "./ListOfProducers.scss"
 
 const ListOfProducers = props => {
-
-
-
     const tempData = {
         producers: [
             {
@@ -15,20 +11,20 @@ const ListOfProducers = props => {
                 title: "Desisan"
             },
             {
-                title: "Karya" 
+                title: "Karya"
             },
             {
-                title: "Kipling" 
+                title: "Kipling"
             },
             {
-                title: "POLO" 
+                title: "POLO"
             },
             {
-                title: "Parfois" 
+                title: "Parfois"
             },
             {
-                title: "Parse" 
-            },
+                title: "Parse"
+            }
         ],
         colors: [
             {
@@ -50,84 +46,94 @@ const ListOfProducers = props => {
             {
                 title: "Черный",
                 bkg: "#343434"
-            },
+            }
         ],
         models: ["Через плечо", "Поясная"]
     }
-   
 
     return (
         <>
-        <div>
-            <p className={classes.par}>Производитель</p>
-            <ul className={classes.producer_list}>
-                {
-                    tempData.producers.map((el, ind) => {
+            <div>
+                <p className={classes.par}>Производитель</p>
+                <ul className={classes.producer_list}>
+                    {tempData.producers.map((el, ind) => {
                         return (
                             <li
                                 key={ind} // они не денамичны!
                                 className={classes.filter_item}
                             >
                                 <label htmlFor={el.title + ind}>
-                                    <input className={classes.root_input} type="checkbox" onChange={null} id={el.title + ind}/>
-                                    <span className={classes.checkbox_indicator} />
-                                    { el.title }
+                                    <input
+                                        className={classes.root_input}
+                                        type="checkbox"
+                                        onChange={null}
+                                        id={el.title + ind}
+                                    />
+                                    <span
+                                        className={classes.checkbox_indicator}
+                                    />
+                                    {el.title}
                                 </label>
                             </li>
                         )
-                    })
-                }
-            </ul>
-        </div>
-        <div>
-            <p className={classes.par}>Цвета</p>
-            <ul className={classes.producer_list}>
-                {
-                    tempData.colors.map((el, ind) => {
+                    })}
+                </ul>
+            </div>
+            <div>
+                <p className={classes.par}>Цвета</p>
+                <ul className={classes.producer_list}>
+                    {tempData.colors.map((el, ind) => {
                         return (
                             <li
                                 key={ind} // они не денамичны!
                                 className={classes.filter_item}
                             >
                                 <label htmlFor={el.title + ind}>
-                                    <input className={classes.root_input} type="checkbox" onChange={null} id={el.title + ind}/>
+                                    <input
+                                        className={classes.root_input}
+                                        type="checkbox"
+                                        onChange={null}
+                                        id={el.title + ind}
+                                    />
                                     <span
                                         className={classes.checkbox_indicator}
                                         style={{backgroundColor: el.bkg}}
                                     />
-                                    { el.title }
+                                    {el.title}
                                 </label>
                             </li>
                         )
-                    })
-                }
-            </ul>
-        </div>
-        <div>
-            <p className={classes.par}>Модель</p>
-            <ul className={classes.producer_list}>
-                {
-                    tempData.models.map((el, ind) => {
+                    })}
+                </ul>
+            </div>
+            <div>
+                <p className={classes.par}>Модель</p>
+                <ul className={classes.producer_list}>
+                    {tempData.models.map((el, ind) => {
                         return (
                             <li
                                 key={ind} // они не денамичны!
                                 className={classes.filter_item}
                             >
                                 <label htmlFor={el + ind}>
-                                    <input className={classes.root_input} type="checkbox" onChange={null} id={el + ind}/>
+                                    <input
+                                        className={classes.root_input}
+                                        type="checkbox"
+                                        onChange={null}
+                                        id={el + ind}
+                                    />
                                     <span
                                         className={classes.checkbox_indicator}
                                     />
-                                    { el }
+                                    {el}
                                 </label>
                             </li>
                         )
-                    })
-                }
-            </ul>
-        </div>
+                    })}
+                </ul>
+            </div>
         </>
     )
 }
 
-export default ListOfProducers;
+export default ListOfProducers

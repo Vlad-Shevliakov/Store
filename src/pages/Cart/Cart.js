@@ -1,15 +1,12 @@
-import React, { PureComponent } from 'react'
-import classes from './Cart.scss'
-import { connect } from 'react-redux'
-import * as cart from '../../redux/actions/cartAction'
+import React, {PureComponent} from "react"
+import classes from "./Cart.scss"
+import {connect} from "react-redux"
+import * as cart from "../../redux/actions/cartAction"
 
-import Orders from './Orders/Orders'
-import Summary from './Summary/Summary'
+import Orders from "./Orders/Orders"
+import Summary from "./Summary/Summary"
 
 const Cart = class extends PureComponent {
-
-
-
     componentDidMount() {
         this.calculationOfTheAmount()
     }
@@ -18,34 +15,27 @@ const Cart = class extends PureComponent {
         this.calculationOfTheAmount()
     }
 
-
     calculationOfTheAmount = () => {
         const amount = this.props.ordersList.reduce((count, order) => {
-            return count += order.price 
+            return (count += order.price)
         }, 0)
         this.props.totalAmount(amount)
     }
-    
 
     render() {
-
         return (
-            <div className={classes.Cart}>                
+            <div className={classes.Cart}>
                 <div className={classes.cart_container}>
                     <Orders
                         orders={this.props.ordersList}
                         removeHandler={this.props.removeOrder}
                     />
-                    <Summary 
-                        totalSumm={this.props.totalSumm}
-                    />
+                    <Summary totalSumm={this.props.totalSumm} />
                 </div>
             </div>
         )
-
     }
 }
-
 
 const mapStateToProps = store => {
     return {
@@ -56,11 +46,12 @@ const mapStateToProps = store => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        removeOrder: (code) => dispatch(cart.removeOrder(code)),
-        totalAmount: (amount) => dispatch(cart.priceCalculation(amount))
-    } 
+        removeOrder: code => dispatch(cart.removeOrder(code)),
+        totalAmount: amount => dispatch(cart.priceCalculation(amount))
+    }
 }
 
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(Cart)
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Cart)

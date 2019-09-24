@@ -1,5 +1,5 @@
-import React from 'react'
-import classes from './Loader.scss'
+import React from "react"
+import classes from "./Loader.scss"
 
 export default props => (
     <ul className={classes.spinner}>
