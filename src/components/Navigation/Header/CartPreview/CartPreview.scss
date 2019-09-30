@@ -13,6 +13,7 @@
 
 .container {
     position: absolute;
+    top: -1px;
     z-index: 999;
     display: $cart-visibility;
     width: 400px;

@@ -23,7 +23,7 @@ const ProductUnit = props => {
     }
 
     return (
-        <li className={classes.ProductUnit}>
+        <li className={classes.productUnit}>
             <div className={classes.product_preview}>
                 <Link to={"#"}>
                     <img
@@ -33,14 +33,16 @@ const ProductUnit = props => {
                     />
                 </Link>
             </div>
-            <div className={classes.product_info}>
-                <Link to={"#"} className={classes.title}>
-                    {title}
-                </Link>
-            </div>
-            <div className={classes.product_price}>
-                <strong className={classes.price}>{price}</strong>
-                <span className={classes.currency}>грн</span>
+            <div className={classes.twrp}>
+                <div className={classes.product_info}>
+                    <Link to={"#"} className={classes.title}>
+                        {title}
+                    </Link>
+                </div>
+                <div className={classes.product_price}>
+                    <strong className={classes.price}>{price}</strong>
+                    <span className={classes.currency}>грн</span>
+                </div>
             </div>
             <div className={classes.button_wrapper}>
                 <Button func={addToCartHandler} classType="ProductButton_cart">

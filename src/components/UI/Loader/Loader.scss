@@ -1,8 +1,16 @@
 @import '../../../Variables.scss';
 
+.spinner_wrp {
+    height: 100vh;
+    position: relative;
+}
+
 .spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 0;
-    margin: 100px auto 0;
     width: 70px;
     text-align: center;
 }
