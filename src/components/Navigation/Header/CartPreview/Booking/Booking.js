@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 import {TransitionGroup, CSSTransition} from "react-transition-group"
 import booking from "./BookingFade.scss"
 // Это тест, только для вида!
-import Bag from "../../../../../assets/rastr/test-bag_1.jpg"
+
 
 const Booking = props => {
     const {cartItems, removeOrder} = props
@@ -28,7 +28,7 @@ const Booking = props => {
                                 <div className={classes.Item}>
                                     <div className={classes.ImgBox}>
                                         <a href={`#${ind}`}>
-                                            <img src={Bag} alt="#" />
+                                            <img src={product.img} alt="#" />
                                         </a>
                                     </div>
                                     <div className={classes.otherData}>
@@ -44,7 +44,7 @@ const Booking = props => {
                                                 removeOrder(product.code)
                                             }
                                         >
-                                            <strong>1 шт.</strong>
+                                            <strong>{product.amount} шт.</strong>
                                             <i className="fas fa-trash" />
                                         </div>
                                     </div>

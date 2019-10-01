@@ -1,31 +1,31 @@
-import React, {useState} from "react"
+import React from "react"
 import classes from "./OrderItem.scss"
 import Button from "../../../../components/UI/Button/Button"
 
 const OrderItem = props => {
-    const [amout, setAmout] = useState(1)
 
-    const {title, image, price, code, removeHandler} = props
+
+    const {title, image, price, code, amount, removeHandler} = props
 
     const removeFunc = () => {
         removeHandler(code)
     }
 
     const changeAmount = event => {
-        setAmout(+event.target.value)
+        // setAmout(+event.target.value)
         console.log(typeof +event.target.value)
     }
 
-    const plusOne = () => {
-        setAmout(amout + 1)
-    }
+    // const plusOne = () => {
+    //     setAmout(amout + 1)
+    // }
 
-    const subOne = () => {
-        if (amout <= 1) {
-            return
-        }
-        setAmout(amout - 1)
-    }
+    // const subOne = () => {
+    //     if (amout <= 1) {
+    //         return
+    //     }
+    //     setAmout(amout - 1)
+    // }
 
     return (
         <li className={classes.order_item}>
@@ -48,17 +48,17 @@ const OrderItem = props => {
                 </ul>
                 <ul className={classes.price_c_list}>
                     <li className={classes.order_controls}>
-                        <Button classType="numControl_l" func={subOne} />
+                        <Button classType="numControl_l" func={null} />
                         <input
                             type="number"
-                            value={amout}
+                            value={amount}
                             className={classes.order_inp}
                             onChange={changeAmount}
                         />
-                        <Button classType="numControl_r" func={plusOne} />
+                        <Button classType="numControl_r" func={null} />
                     </li>
                     <li className={classes.product_price}>
-                        <strong className={classes.price}>{price}</strong>
+                        <strong className={classes.price}>{price * amount}</strong>
                         <span className={classes.currency}>грн</span>
                     </li>
                 </ul>

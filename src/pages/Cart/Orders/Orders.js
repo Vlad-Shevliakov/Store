@@ -38,6 +38,7 @@ const Orders = props => {
                                 image={order.img}
                                 code={order.code}
                                 price={order.price}
+                                amount={order.amount}
                                 removeHandler={removeHandler}
                             />
                         </CSSTransition>

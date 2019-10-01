@@ -1,4 +1,4 @@
-import React, {PureComponent} from "react"
+import React, {Component} from "react"
 import classes from "./Cart.scss"
 import {connect} from "react-redux"
 import * as cart from "../../redux/actions/cartAction"
@@ -6,7 +6,7 @@ import * as cart from "../../redux/actions/cartAction"
 import Orders from "./Orders/Orders"
 import Summary from "./Summary/Summary"
 
-const Cart = class extends PureComponent {
+const Cart = class extends Component {
     componentDidMount() {
         this.calculationOfTheAmount()
     }
@@ -17,6 +17,10 @@ const Cart = class extends PureComponent {
 
     calculationOfTheAmount = () => {
         const amount = this.props.ordersList.reduce((count, order) => {
+            if (order.amount > 1) {
+                const total = order.price * order.amount
+                return count += total
+            }
             return (count += order.price)
         }, 0)
         this.props.totalAmount(amount)
@@ -30,7 +34,9 @@ const Cart = class extends PureComponent {
                         orders={this.props.ordersList}
                         removeHandler={this.props.removeOrder}
                     />
-                    <Summary totalSumm={this.props.totalSumm} />
+                    <Summary 
+                        totalSumm={this.props.totalSumm} 
+                    />
                 </div>
             </div>
         )

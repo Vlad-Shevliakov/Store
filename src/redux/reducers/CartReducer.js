@@ -1,5 +1,5 @@
 import * as AT from "../actionType"
-// import nid from 'nanoid'
+
 
 const initialState = {
     amount: 0,
@@ -8,14 +8,9 @@ const initialState = {
     //     title: 'Cotton Out Edition',
     //     img: 'https://github.com/Vlad-Shevliakov/Store/blob/master/src/assets/rastr/test-bag_1.jpg?raw=true', // t
     //     price: 1290,
+    //     amount: 1 // default
     //     code: nid(10)
-    // },
-    // {
-    //     title: 'Out Biz Edition',
-    //     img: 'https://github.com/Vlad-Shevliakov/Store/blob/master/src/assets/rastr/test-bag_1.jpg?raw=true', // t
-    //     price: 2292,
-    //     code: nid(10)
-    // },]
+    // }
 }
 
 export default (state = initialState, action) => {
@@ -36,7 +31,13 @@ export default (state = initialState, action) => {
                 ...state,
                 orders: arrWithNewOrder
             }
-
+        case AT.CART_UPDATE_ORDER_AMOUNT:
+            const updateOrder = [...state.orders]
+            updateOrder[action.payload].amount++
+            return {
+                ...state,
+                orders: updateOrder
+            }
         case AT.CART_PRICE_CALCULATION:
             return {
                 ...state,

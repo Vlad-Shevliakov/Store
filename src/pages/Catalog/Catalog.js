@@ -1,6 +1,8 @@
 import React from "react"
 import classes from "./Catalog.scss"
 
+import { Link } from "react-router-dom"
+
 import chimg from "../../assets/vector/suitcase.svg"
 import purse from "../../assets/vector/purse.svg"
 import backpack from "../../assets/vector/backpack.svg"
@@ -20,7 +22,7 @@ const Catalog = props => {
                     <div className={classes.container}>
                         <div className={classes.hover_box}>
                             <span>Чемоданы</span>
-                            <a href="/products">Далее</a>
+                            <Link to="/products">Далее</Link>
                         </div>
                     </div>
                     <p className={classes.sub}>Чемоданы</p>
@@ -32,7 +34,7 @@ const Catalog = props => {
                     <div className={classes.container}>
                         <div className={classes.hover_box}>
                             <span>Сумки</span>
-                            <a href="/products">Далее</a>
+                            <Link to="/products">Далее</Link>
                         </div>
                     </div>
                     <p className={classes.sub}>Сумки</p>
@@ -44,7 +46,7 @@ const Catalog = props => {
                     <div className={classes.container}>
                         <div className={classes.hover_box}>
                             <span>Кошельки</span>
-                            <a href="/products">Далее</a>
+                            <Link to="/products">Далее</Link>
                         </div>
                     </div>
                     <p className={classes.sub}>Кошельки</p>
@@ -56,7 +58,7 @@ const Catalog = props => {
                     <div className={classes.container}>
                         <div className={classes.hover_box}>
                             <span>Рюкзаки</span>
-                            <a href="/products">Далее</a>
+                            <Link to="/products">Далее</Link>
                         </div>
                     </div>
                     <p className={classes.sub}>Рюкзаки</p>
